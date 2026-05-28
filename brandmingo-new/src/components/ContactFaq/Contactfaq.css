@@ -1,0 +1,537 @@
+/* ═══════════════════════════════════════════════════════
+   ContactFaq.css
+   Dark premium · #0d0d0d bg · #ff6b1e accent · Poppins
+═══════════════════════════════════════════════════════ */
+
+/* ── Keyframes ── */
+@keyframes cfaqFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes cfaqOrbit1 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes cfaqOrbit2 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+@keyframes cfaqFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+@keyframes cfaqParticle {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: translateY(-12px) scale(1.5);
+  }
+}
+@keyframes cfaqGlowPulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+@keyframes cfaqAnswerOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes cfaqRightIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes cfaqAccentShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* ── Section ── */
+.cfaq-section {
+  background: #0d0d0d;
+  padding: 90px 0 80px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", "Mont", sans-serif;
+}
+
+/* Background orbs */
+.cfaq-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.cfaq-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+/* ✅ Dono ko transparent kar do */
+.cfaq-bg-orb--1 {
+  background: transparent;
+}
+.cfaq-bg-orb--2 {
+  background: transparent;
+}
+/* Container */
+.cfaq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Grid — 55% left / 45% right */
+.cfaq-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ══════════════════════════════════════════
+   LEFT — FAQ
+══════════════════════════════════════════ */
+.cfaq-left {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.cfaq-section--visible .cfaq-left {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Eyebrow */
+.cfaq-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #ff6b1e;
+  margin-bottom: 16px;
+}
+.cfaq-eyebrow-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff6b1e;
+  flex-shrink: 0;
+}
+
+/* Heading */
+.cfaq-heading {
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.2;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.cfaq-heading-accent {
+  background: linear-gradient(90deg, #ff6b1e 0%, #ffb347 40%, #ff6b1e 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: cfaqAccentShimmer 4s linear infinite;
+}
+.cfaq-heading-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff6b1e;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+/* ── FAQ List ── */
+.cfaq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── FAQ Item ── */
+.cfaq-item {
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  overflow: hidden;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  /* Stagger on reveal */
+  opacity: 0;
+}
+.cfaq-section--visible .cfaq-item {
+  animation: cfaqFadeUp 0.5s cubic-bezier(0.34, 1.1, 0.64, 1) both;
+  animation-delay: calc(0.2s + var(--delay, 0s));
+}
+.cfaq-item--open,
+.cfaq-item:hover {
+  border-color: rgba(255, 107, 30, 0.28);
+  box-shadow: 0 4px 24px rgba(255, 107, 30, 0.08);
+}
+
+/* Trigger button */
+.cfaq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.cfaq-trigger:focus-visible {
+  outline: 2px solid rgba(255, 107, 30, 0.5);
+  outline-offset: -2px;
+}
+
+/* Question icon */
+.cfaq-q-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: rgba(255, 107, 30, 0.1);
+  border: 1px solid rgba(255, 107, 30, 0.22);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b1e;
+  font-size: 15px;
+  flex-shrink: 0;
+  transition:
+    background 0.25s,
+    transform 0.25s;
+}
+.cfaq-item--open .cfaq-q-icon {
+  background: rgba(255, 107, 30, 0.18);
+  transform: scale(1.08);
+}
+
+/* Question text */
+.cfaq-q-text {
+  flex: 1;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.45;
+}
+
+/* Chevron */
+.cfaq-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.35);
+  flex-shrink: 0;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1),
+    color 0.25s,
+    border-color 0.25s,
+    background 0.25s;
+}
+.cfaq-item--open .cfaq-chevron {
+  transform: rotate(180deg);
+  color: #ff6b1e;
+  border-color: rgba(255, 107, 30, 0.3);
+  background: rgba(255, 107, 30, 0.08);
+}
+
+/* Answer */
+.cfaq-answer {
+  animation: cfaqAnswerOpen 0.3s ease both;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.cfaq-answer[hidden] {
+  display: none;
+}
+
+.cfaq-answer-text {
+  padding: 14px 20px 18px 70px; /* align with question text */
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.52);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════
+   RIGHT — Lottie + rings
+══════════════════════════════════════════ */
+.cfaq-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+
+  opacity: 0;
+  transform: translateX(30px);
+  transition:
+    opacity 0.65s 0.25s ease,
+    transform 0.65s 0.25s ease;
+}
+.cfaq-right--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Orbit rings */
+.cfaq-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 107, 30, 0.18);
+  pointer-events: none;
+}
+.cfaq-ring--1 {
+  width: 260px;
+  height: 260px;
+  animation: cfaqOrbit1 18s linear infinite;
+  border-style: dashed;
+  border-color: rgba(255, 107, 30, 0.14);
+}
+.cfaq-ring--2 {
+  width: 340px;
+  height: 340px;
+  animation: cfaqOrbit2 26s linear infinite;
+  border-color: rgba(255, 107, 30, 0.08);
+}
+.cfaq-ring--3 {
+  width: 420px;
+  height: 420px;
+  border-color: rgba(255, 107, 30, 0.05);
+  animation: cfaqOrbit1 38s linear infinite;
+}
+
+/* Center glow */
+.cfaq-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 30, 0.18) 0%,
+    transparent 70%
+  );
+  animation: cfaqGlowPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Lottie wrapper */
+.cfaq-lottie-wrap {
+  position: relative;
+  z-index: 2;
+  width: 180px;
+  height: 180px;
+  animation: cfaqFloat 5s ease-in-out infinite;
+  filter: drop-shadow(0 10px 30px rgba(255, 107, 30, 0.25));
+}
+
+/* Motivational text below animation */
+.cfaq-right-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+.cfaq-right-headline {
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.55;
+  margin: 0 0 8px;
+}
+.cfaq-right-headline em {
+  font-style: italic;
+  color: #fff;
+}
+.cfaq-right-accent {
+  color: #ff6b1e;
+  font-weight: 700;
+}
+.cfaq-right-sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.38);
+  margin: 0;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Floating particles */
+.cfaq-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: #ff6b1e;
+  animation: cfaqParticle ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .cfaq-heading {
+    font-size: 28px;
+  }
+  .cfaq-ring--3 {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .cfaq-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .cfaq-right {
+    order: -1; /* animation on top on tablet/mobile */
+    min-height: 280px;
+    transform: translateX(0);
+    opacity: 0;
+    transition: opacity 0.6s 0.1s ease;
+  }
+  .cfaq-right--visible {
+    opacity: 1;
+  }
+
+  .cfaq-ring--2 {
+    width: 260px;
+    height: 260px;
+  }
+  .cfaq-ring--3 {
+    display: none;
+  }
+  .cfaq-lottie-wrap {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cfaq-section {
+    padding: 70px 0 60px;
+  }
+  .cfaq-container {
+    padding: 0 18px;
+  }
+  .cfaq-heading {
+    font-size: 24px;
+  }
+  .cfaq-answer-text {
+    padding-left: 20px;
+  } /* less indent on small screens */
+  .cfaq-q-text {
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cfaq-section {
+    padding: 55px 0 50px;
+  }
+  .cfaq-heading {
+    font-size: 21px;
+  }
+  .cfaq-trigger {
+    padding: 15px 14px;
+    gap: 10px;
+  }
+  .cfaq-q-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+  .cfaq-ring--1 {
+    width: 200px;
+    height: 200px;
+  }
+  .cfaq-ring--2 {
+    display: none;
+  }
+  .cfaq-lottie-wrap {
+    width: 130px;
+    height: 130px;
+  }
+  .cfaq-right-headline {
+    font-size: 15px;
+  }
+}

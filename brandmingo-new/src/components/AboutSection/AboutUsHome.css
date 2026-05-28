@@ -1,0 +1,669 @@
+/* ============================================================
+    AboutUsHome.css  –  Premium Dark Agency Section
+    Refined to match reference UI quality
+    ============================================================ */
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --au-bg: #050505;
+  --au-orange: #ff6b00;
+  --au-orange-dim: rgba(255, 107, 0, 0.12);
+  --au-orange-glow: rgba(255, 107, 0, 0.28);
+  --au-white: #ffffff;
+  --au-gray: #8a8a8a;
+  --au-gray-light: #b0b0b0;
+  --au-card-bg: rgba(255, 255, 255, 0.035);
+  --au-card-bg-hover: rgba(255, 255, 255, 0.055);
+  --au-card-border: rgba(255, 255, 255, 0.08);
+  --au-radius: 16px;
+  --au-radius-sm: 10px;
+  --au-font-heading: "Poppins", sans-serif;
+  --au-font-body: "Inter", "Segoe UI", sans-serif;
+  --au-stats-bg: rgba(22, 22, 22, 0.98);
+}
+
+/* ── Section wrapper ──────────────────────────────────────── */
+.au-section {
+  position: relative;
+  background: var(--au-bg);
+  padding: 120px 0 0;
+  overflow: hidden;
+  font-family: var(--au-font-body);
+}
+
+/* ── Dot grid – hidden ───────────────────── */
+.au-dot-grid {
+  display: none;
+}
+
+/* ── Container ────────────────────────────────────────────── */
+.au-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ── ABOUT US badge – centered ────────────────────────────── */
+.au-badge-center-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.au-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 107, 0, 0.08);
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  border-radius: 40px;
+  padding: 9px 22px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--au-orange);
+  text-transform: uppercase;
+  width: fit-content;
+  backdrop-filter: blur(8px);
+}
+
+.au-badge-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--au-orange);
+  border-radius: 50%;
+}
+
+/* ── Top grid ─────────────────────────────────────────────── */
+.au-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+/* ══════════════════════════════════════════════════════════
+    LEFT COLUMN
+  ══════════════════════════════════════════════════════════ */
+.au-left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.au-heading {
+  font-family: var(--au-font-heading);
+  font-size: clamp(30px, 3.5vw, 56px);
+  font-weight: 400;
+  color: var(--au-white);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+.au-heading-highlight {
+  color: var(--au-orange);
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.au-heading-line {
+  width: 48px;
+  height: 3px;
+  background: var(--au-orange);
+  border-radius: 4px;
+  margin-top: -8px;
+}
+
+/* ── Image stack ──────────────────────────────────────────── */
+.au-images-wrap {
+  position: relative;
+  height: 360px;
+}
+
+.au-img-card {
+  position: absolute;
+  border-radius: var(--au-radius);
+  overflow: visible;
+  cursor: pointer;
+}
+
+.au-img-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--au-radius);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) brightness(0.75);
+  transition:
+    filter 0.45s ease,
+    transform 0.45s ease;
+}
+
+.au-img-card:hover .au-img-inner {
+  filter: grayscale(60%) brightness(0.88);
+  transform: scale(1.02);
+}
+
+.au-img-1 {
+  background:
+    linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%),
+    url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80")
+      center/cover;
+  background-blend-mode: overlay;
+}
+.au-img-2 {
+  background:
+    linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%),
+    url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80")
+      center/cover;
+  background-blend-mode: overlay;
+}
+
+.au-img-card--top {
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 48%;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px var(--au-card-border);
+}
+
+.au-img-card--bot {
+  bottom: 0;
+  left: 0;
+  width: 70%;
+  height: 48%;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px var(--au-card-border);
+}
+
+/* ── Floating icon badges ────────────────────────────────── */
+.au-float-badge {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  background: var(--au-orange);
+  border-radius: var(--au-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(255, 107, 0, 0.35);
+  z-index: 4;
+}
+
+.au-float-badge--tl {
+  top: -16px;
+  left: -16px;
+}
+
+.au-float-badge--br {
+  bottom: -16px;
+  right: -16px;
+}
+
+/* ── Rotating badge ── */
+.au-rotating-badge-wrap {
+  position: absolute;
+  right: -20px;
+  top: 44%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 150px;
+  z-index: 5;
+}
+
+.au-rotating-ring {
+  position: absolute;
+  inset: 0;
+}
+
+.au-ring-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.au-ring-text {
+  fill: rgba(255, 255, 255, 0.55);
+  font-size: 19px;
+  font-family: var(--au-font-body);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.au-badge-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 20, 10, 0.85);
+  border-radius: 50%;
+  margin: 30px;
+  border: 1px solid rgba(255, 107, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.au-badge-emoji {
+  font-size: 30px;
+}
+
+/* ══════════════════════════════════════════════════════════
+    RIGHT COLUMN
+  ══════════════════════════════════════════════════════════ */
+.au-right {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 8px;
+}
+
+.au-intro-block {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.au-intro-icon-wrap {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 107, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 107, 0, 0.2);
+}
+
+.au-intro-icon {
+  color: var(--au-orange);
+  font-size: 22px;
+}
+
+.au-intro-tagline {
+  font-size: 16px;
+  color: var(--au-gray-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.au-intro-tagline strong {
+  color: var(--au-white);
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.au-orange {
+  color: var(--au-orange);
+}
+
+.au-body-text {
+  font-size: 15px;
+  color: var(--au-gray);
+  line-height: 1.85;
+  max-width: 520px;
+}
+
+.au-right .btn-style-one {
+  display: inline-flex;
+  width: auto;
+  align-self: flex-start;
+}
+
+/* ── Skills / Progress bars ─────── */
+.au-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.au-skill-row {
+  background: var(--au-card-bg);
+  border: 1px solid var(--au-card-border);
+  border-radius: var(--au-radius-sm);
+  padding: 18px 22px;
+  transition: background 0.25s ease;
+}
+
+.au-skill-row:hover {
+  background: var(--au-card-bg-hover);
+}
+
+.au-skill-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.au-skill-icon-wrap {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 107, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+  border: 1px solid rgba(255, 107, 0, 0.15);
+}
+
+.au-skill-label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--au-white);
+  letter-spacing: 0.2px;
+}
+
+.au-skill-pct {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--au-orange);
+  min-width: 38px;
+  text-align: right;
+}
+
+.au-bar-track {
+  position: relative;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.au-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b00 0%, #ff9340 100%);
+  border-radius: 20px;
+}
+
+/* ══════════════════════════════════════════════════════════
+    STATS BAR — white bg
+  ══════════════════════════════════════════════════════════ */
+.au-stats-bar {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.au-stat-card {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 44px 36px;
+  cursor: default;
+  transition: background 0.25s ease;
+}
+
+.au-stat-card:hover {
+  background: rgba(255, 107, 0, 0.03);
+}
+
+.au-stat-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: var(--au-orange);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.3);
+}
+
+.au-stat-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.au-stat-number {
+  font-family: var(--au-font-heading);
+  font-size: clamp(28px, 3vw, 46px);
+  font-weight: 700;
+  color: #111111;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+
+.au-stat-label {
+  font-size: 13px;
+  color: #888888;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.au-stats-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+    RESPONSIVE
+  ══════════════════════════════════════════════════════════ */
+
+@media (min-width: 1600px) {
+  .au-heading {
+    font-size: 72px;
+  }
+  .au-images-wrap {
+    height: 460px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .au-container {
+    padding: 0 36px;
+  }
+  .au-grid {
+    gap: 56px;
+  }
+  .au-images-wrap {
+    height: 380px;
+  }
+  .au-stat-card {
+    padding: 40px 24px;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .au-section {
+    padding: 120px 0 0;
+  }
+  .au-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .au-images-wrap {
+    height: 360px;
+    max-width: 560px;
+  }
+  .au-rotating-badge-wrap {
+    right: 20px;
+  }
+  .au-body-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .au-section {
+    padding: 70px 0 0;
+  }
+  .au-container {
+    padding: 0 24px;
+  }
+  .au-badge-center-wrap {
+    margin-bottom: 44px;
+  }
+  .au-grid {
+    margin-bottom: 56px;
+  }
+  .au-images-wrap {
+    height: 320px;
+  }
+  .au-rotating-badge-wrap {
+    width: 120px;
+    height: 120px;
+    right: 0;
+  }
+  /* STATS — 2x2 grid */
+  .au-stats-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 16px;
+  }
+  .au-stat-card {
+    flex: unset;
+    padding: 28px 20px;
+  }
+  .au-stats-divider {
+    display: none;
+  }
+  .au-stat-card:nth-child(1),
+  .au-stat-card:nth-child(3) {
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .au-stat-card:nth-child(1),
+  .au-stat-card:nth-child(2) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+@media (max-width: 560px) {
+  .au-section {
+    padding: 56px 0 0;
+  }
+
+  .au-container {
+    padding: 0 20px;
+  }
+
+  .au-grid {
+    gap: 48px;
+    margin-bottom: -25px;
+  }
+
+  .au-heading {
+    font-size: clamp(28px, 9vw, 44px);
+    letter-spacing: -1px;
+  }
+
+  .au-images-wrap {
+    height: 260px;
+  }
+
+  .au-rotating-badge-wrap {
+    width: 100px;
+    height: 100px;
+    right: -4px;
+    top: 46%;
+  }
+
+  .au-badge-inner {
+    margin: 20px;
+  }
+
+  .au-badge-emoji {
+    font-size: 22px;
+  }
+
+  .au-float-badge {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .au-float-badge--tl {
+    top: -12px;
+    left: -12px;
+  }
+
+  .au-float-badge--br {
+    bottom: -12px;
+    right: -12px;
+  }
+
+  .au-intro-block {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .au-skill-row {
+    padding: 14px 16px;
+  }
+
+  /* STATS mobile — keep 2x2 */
+  .au-stats-bar {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 14px;
+  }
+
+  .au-stat-card {
+    padding: 22px 16px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 10px;
+  }
+
+  .au-stat-text {
+    align-items: center;
+  }
+
+  .au-stat-label {
+    white-space: normal;
+  }
+
+  .au-stat-number {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 380px) {
+  .au-heading {
+    font-size: 26px;
+  }
+  .au-images-wrap {
+    height: 220px;
+  }
+  .au-stat-card {
+    padding: 18px 12px;
+    gap: 10px;
+  }
+  .au-stat-number {
+    font-size: 26px;
+  }
+}

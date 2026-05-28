@@ -1,0 +1,601 @@
+/* ============================================================
+   Founders.css — Premium Team Section v5
+   Hover: 3D flip → pure white bio panel (no image, full content)
+   Namespace: fnd-
+   ============================================================ */
+
+@keyframes fnd-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fnd-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+@keyframes fnd-pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 107, 30, 0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.9);
+    box-shadow: 0 0 0 6px rgba(255, 107, 30, 0);
+  }
+}
+@keyframes fnd-line-grow {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 48px;
+    opacity: 1;
+  }
+}
+
+/* ── Section ── */
+.fnd-section {
+  background-color: var(--body-bg, #0d0d0d);
+  padding: 90px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.fnd-bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 107, 30, 0.055) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.28;
+}
+
+/* ── Container ── */
+.fnd-container {
+  max-width: var(--container-width, 1140px);
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Header ── */
+.fnd-header {
+  text-align: center;
+  margin-bottom: 56px;
+  opacity: 0;
+}
+.fnd-header.fnd-visible {
+  animation: fnd-fadeUp 0.55s ease both;
+}
+
+.fnd-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--theme-color1, #ff6b1e);
+  margin-bottom: 16px;
+}
+.fnd-label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--theme-color1, #ff6b1e);
+  animation: fnd-pulse-dot 2s ease-in-out infinite;
+}
+.fnd-heading {
+  font-size: clamp(26px, 3.6vw, 46px);
+  font-weight: 800;
+  color: var(--headings-color, #fff);
+  line-height: 1.12;
+  margin-bottom: 0;
+}
+.fnd-heading-accent {
+  background: linear-gradient(90deg, #ff6b1e, #ff9a5c, #ff6b1e);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fnd-shimmer 3s linear infinite;
+  display: block;
+}
+.fnd-heading-line {
+  display: block;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--theme-color1, #ff6b1e), transparent);
+  border-radius: 4px;
+  margin: 12px auto 0;
+}
+.fnd-header.fnd-visible .fnd-heading-line {
+  animation: fnd-line-grow 0.8s ease 0.4s forwards;
+}
+
+/* ── Grid ── */
+.fnd-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ══════════════════════════════════════
+   CARD — 3D flip on HOVER
+   ══════════════════════════════════════ */
+.fnd-card {
+  perspective: 1100px;
+  opacity: 0;
+  height: 440px;
+  cursor: pointer;
+}
+.fnd-card.fnd-visible {
+  animation: fnd-fadeUp 0.55s ease both;
+}
+
+/* inner — rotates on hover */
+.fnd-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.55, 0.1, 0.45, 0.9);
+  border-radius: 18px;
+}
+.fnd-card:hover .fnd-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* shared face */
+.fnd-card-front,
+.fnd-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ── FRONT ── */
+.fnd-card-front {
+  background: #111;
+  border: 1px solid rgba(255, 107, 30, 0.1);
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.24);
+}
+
+.fnd-card-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.fnd-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.fnd-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.44) 42%,
+    rgba(0, 0, 0, 0.04) 72%,
+    transparent 100%
+  );
+}
+
+/* orange top line */
+.fnd-card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--theme-color1, #ff6b1e),
+    transparent
+  );
+  opacity: 0.5;
+  z-index: 3;
+}
+
+/* front bottom content */
+.fnd-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 20px 18px;
+  z-index: 2;
+}
+.fnd-card-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 3px;
+  line-height: 1.2;
+}
+.fnd-card-role {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+.fnd-card-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 13px;
+}
+.fnd-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fnd-social a {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+.fnd-social a:hover {
+  background: var(--theme-color1, #ff6b1e);
+  border-color: var(--theme-color1, #ff6b1e);
+  color: #fff;
+}
+.fnd-view-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+}
+.fnd-view-profile i {
+  font-size: 9px;
+}
+
+/* ── BACK — pure white, full content ── */
+.fnd-card-back {
+  background: #ffffff;
+  border: 1px solid rgba(255, 107, 30, 0.22);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.16);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px 30px 32px;
+  gap: 0;
+}
+
+/* orange top bar */
+.fnd-card-back::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--theme-color1, #ff6b1e), #ff9a5c);
+  z-index: 2;
+}
+
+/* decorative large quote / icon top-right */
+.fnd-back-deco {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(255, 107, 30, 0.08);
+  border: 1px solid rgba(255, 107, 30, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-color1, #ff6b1e);
+  font-size: 16px;
+}
+
+.fnd-back-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0d0d0d;
+  margin-bottom: 3px;
+  line-height: 1.2;
+  margin-top: 0;
+}
+.fnd-back-name a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.fnd-back-role {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.35);
+  margin-bottom: 14px;
+}
+
+.fnd-back-divider {
+  height: 2px;
+  width: 32px;
+  background: var(--theme-color1, #ff6b1e);
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.fnd-back-bio {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.58);
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+/* tags / skills chips */
+.fnd-back-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.fnd-back-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--theme-color1, #ff6b1e);
+  background: rgba(255, 107, 30, 0.08);
+  border: 1px solid rgba(255, 107, 30, 0.18);
+  border-radius: 5px;
+  padding: 4px 9px;
+}
+
+.fnd-back-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.fnd-back-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--theme-color1, #ff6b1e);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.22s ease;
+  cursor: pointer;
+}
+.fnd-back-linkedin:hover {
+  background: #e85c0d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 107, 30, 0.36);
+}
+.fnd-back-linkedin i {
+  font-size: 13px;
+}
+
+.fnd-back-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.28);
+  text-decoration: none;
+  transition: color 0.22s ease;
+}
+.fnd-back-arrow i {
+  transition: transform 0.22s ease;
+}
+.fnd-back-arrow:hover {
+  color: var(--theme-color1, #ff6b1e);
+}
+.fnd-back-arrow:hover i {
+  transform: translateX(3px);
+}
+
+/* ── CTA strip ── */
+.fnd-cta {
+  margin-top: 60px;
+  padding: 32px 44px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 30, 0.07) 0%,
+    rgba(255, 107, 30, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 107, 30, 0.13);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+}
+.fnd-cta.fnd-visible {
+  animation: fnd-fadeUp 0.55s ease 0.4s both;
+}
+.fnd-cta::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 30, 0.09) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.fnd-cta-text h3 {
+  font-size: clamp(16px, 2vw, 23px);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 5px;
+  line-height: 1.25;
+}
+.fnd-cta-text h3 span {
+  color: var(--theme-color1, #ff6b1e);
+}
+.fnd-cta-text p {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 440px;
+}
+.fnd-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--theme-color1, #ff6b1e);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 26px;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition:
+    transform 0.26s ease,
+    box-shadow 0.26s ease,
+    background 0.26s ease;
+  position: relative;
+  overflow: hidden;
+}
+.fnd-cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  transform: skewX(-15deg);
+  animation: fnd-shimmer 2.8s ease 1s infinite;
+}
+.fnd-cta-btn:hover {
+  background: #e85c0d;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(255, 107, 30, 0.35);
+}
+.fnd-cta-btn-arrow {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  transition: transform 0.22s ease;
+}
+.fnd-cta-btn:hover .fnd-cta-btn-arrow {
+  transform: translateX(3px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .fnd-section {
+    padding: 72px 0 80px;
+  }
+  .fnd-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .fnd-cta {
+    flex-direction: column;
+    text-align: center;
+  }
+  .fnd-cta-text p {
+    max-width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  .fnd-section {
+    padding: 56px 0 64px;
+  }
+  .fnd-container {
+    padding: 0 14px;
+  }
+  .fnd-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .fnd-header {
+    margin-bottom: 40px;
+  }
+  .fnd-card {
+    height: 400px;
+  }
+  .fnd-card-back {
+    padding: 28px 22px 24px;
+  }
+  .fnd-cta {
+    padding: 22px 18px;
+    margin-top: 44px;
+  }
+  .fnd-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

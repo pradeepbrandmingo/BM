@@ -1,0 +1,625 @@
+/* ══════════════════════════════════════════
+   CONTACT HERO — ContactHero.css
+   Premium • Performant • Fully Responsive
+══════════════════════════════════════════ */
+
+/* ── Section ── */
+.ch-section {
+  position: relative;
+  min-height: 420px;
+  padding: 110px 0 80px;
+  background: var(--body-bg);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ── Background layers ── */
+.ch-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ch-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  will-change: transform;
+}
+
+.ch-bg-orb--1 {
+  width: 600px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 107, 30, 0.18) 0%,
+    transparent 65%
+  );
+  top: -80px;
+  right: -60px;
+  opacity: 0;
+  transition: opacity 1s ease 0.1s;
+}
+
+.ch-bg-orb--2 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 180, 0, 0.07) 0%,
+    transparent 70%
+  );
+  bottom: -60px;
+  left: 10%;
+  opacity: 0;
+  transition: opacity 1s ease 0.3s;
+}
+
+.ch-section--visible .ch-bg-orb--1,
+.ch-section--visible .ch-bg-orb--2 {
+  opacity: 1;
+}
+
+.ch-bg-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.4;
+}
+
+/* ── Container ── */
+.ch-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Inner: left | right ── */
+.ch-inner {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 40px;
+  align-items: center;
+  min-height: 340px;
+}
+
+/* ══════════════════════════════════════════
+   LEFT CONTENT
+══════════════════════════════════════════ */
+.ch-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Eyebrow ── */
+.ch-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--heading-font-family, inherit);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--theme-color1, #ff6b1e);
+  margin-bottom: 18px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition:
+    opacity 0.6s ease 0.1s,
+    transform 0.6s ease 0.1s;
+}
+
+.ch-section--visible .ch-eyebrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ch-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--theme-color1, #ff6b1e);
+  border-radius: 50%;
+  animation: ch-blink 2s ease-in-out infinite;
+}
+
+@keyframes ch-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* ── Heading ── */
+.ch-heading {
+  margin: 0 0 20px;
+  line-height: 1.1;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease 0.2s,
+    transform 0.7s ease 0.2s;
+}
+
+.ch-section--visible .ch-heading {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ch-heading-line1 {
+  display: block;
+  font-family: var(--heading-font-family, inherit);
+  font-size: clamp(36px, 4.5vw, 62px);
+  font-weight: 800;
+  color: var(--headings-color, #fff);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.ch-heading-line2 {
+  display: block;
+  font-family: var(--heading-font-family, inherit);
+  font-size: clamp(34px, 4.2vw, 58px);
+  font-weight: 800;
+  color: var(--headings-color, #fff);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.ch-heading-accent {
+  color: var(--theme-color1, #ff6b1e);
+  font-style: normal;
+  position: relative;
+}
+
+.ch-heading-accent::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--theme-color1, #ff6b1e);
+  border-radius: 2px;
+  transition: width 0.8s ease 0.9s;
+}
+
+.ch-section--visible .ch-heading-accent::after {
+  width: 100%;
+}
+
+.ch-heading-plain {
+  color: var(--headings-color, #fff);
+}
+
+/* ── Description ── */
+.ch-desc {
+  font-family: var(--body-font-family, inherit);
+  font-size: clamp(14px, 1.4vw, 16px);
+  color: var(--text-color, #ccc);
+  opacity: 0;
+  line-height: 1.72;
+  max-width: 440px;
+  margin: 0 0 28px;
+  transform: translateY(16px);
+  transition:
+    opacity 0.65s ease 0.35s,
+    transform 0.65s ease 0.35s;
+}
+
+.ch-section--visible .ch-desc {
+  opacity: 0.55;
+  transform: translateY(0);
+}
+
+/* ── Divider ── */
+.ch-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.45s;
+}
+
+.ch-section--visible .ch-divider {
+  opacity: 1;
+}
+
+.ch-divider-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--theme-color1, #ff6b1e),
+    rgba(255, 107, 30, 0.2)
+  );
+  width: 60px;
+  border-radius: 1px;
+}
+
+.ch-divider-line--short {
+  width: 20px;
+  background: linear-gradient(90deg, rgba(255, 107, 30, 0.3), transparent);
+}
+
+.ch-divider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--theme-color1, #ff6b1e);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════
+   FEATURE BADGES — 3 in a row
+══════════════════════════════════════════ */
+.ch-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ch-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.ch-section--visible .ch-feature {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ch-feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: rgba(255, 107, 30, 0.1);
+  border: 1px solid rgba(255, 107, 30, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-color1, #ff6b1e);
+  flex-shrink: 0;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.ch-feature:hover .ch-feature-icon {
+  background: rgba(255, 107, 30, 0.18);
+  border-color: rgba(255, 107, 30, 0.4);
+  transform: translateY(-2px);
+}
+
+.ch-feature-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ch-feature-title {
+  font-family: var(--heading-font-family, inherit);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--headings-color, #fff);
+  line-height: 1.2;
+  display: block;
+}
+
+.ch-feature-desc {
+  font-family: var(--body-font-family, inherit);
+  font-size: 12.5px;
+  color: var(--text-color, #ccc);
+  opacity: 0.45;
+  line-height: 1.5;
+  display: block;
+}
+
+/* ══════════════════════════════════════════
+   RIGHT — DECORATIVE PANEL
+   (ReactDetailsHero style)
+══════════════════════════════════════════ */
+.ch-deco {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.9s ease 0.3s,
+    transform 0.9s ease 0.3s;
+}
+
+.ch-deco--visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Rotating rings */
+.ch-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 107, 30, 0.15);
+  pointer-events: none;
+}
+
+.ch-ring--1 {
+  width: 340px;
+  height: 340px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ch-ring-spin 18s linear infinite;
+  border-style: dashed;
+  border-color: rgba(255, 107, 30, 0.12);
+}
+
+.ch-ring--2 {
+  width: 440px;
+  height: 440px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ch-ring-spin 28s linear infinite reverse;
+  border-color: rgba(255, 107, 30, 0.07);
+}
+
+@keyframes ch-ring-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Center glow */
+.ch-img-glow {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 30, 0.18) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  animation: ch-glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes ch-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+/* Lottie wrapper */
+.ch-lottie-wrap {
+  position: relative;
+  z-index: 2;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Floating chips */
+.ch-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: rgba(20, 20, 20, 0.85);
+  border: 1px solid rgba(255, 107, 30, 0.25);
+  border-radius: 100px;
+  font-family: var(--heading-font-family, inherit);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--headings-color, #fff);
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 3;
+  animation: ch-chip-float 4s ease-in-out infinite;
+}
+
+.ch-chip svg {
+  color: var(--theme-color1, #ff6b1e);
+  flex-shrink: 0;
+}
+
+.ch-chip--1 {
+  top: 14%;
+  left: 0%;
+  animation-delay: 0s;
+  animation-duration: 4.5s;
+}
+
+.ch-chip--2 {
+  top: 18%;
+  right: 2%;
+  animation-delay: 1.2s;
+  animation-duration: 5s;
+}
+
+.ch-chip--3 {
+  bottom: 18%;
+  left: 4%;
+  animation-delay: 0.7s;
+  animation-duration: 4s;
+}
+
+@keyframes ch-chip-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Vertical label */
+.ch-vert-label {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center center;
+  font-family: var(--heading-font-family, inherit);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 107, 30, 0.4);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Bottom gradient fade ── */
+.ch-bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--body-bg));
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+
+@media (max-width: 1199.98px) {
+  .ch-inner {
+    grid-template-columns: 1fr 400px;
+    gap: 30px;
+  }
+  .ch-deco {
+    height: 420px;
+  }
+  .ch-lottie-wrap {
+    width: 280px;
+    height: 280px;
+  }
+  .ch-ring--1 {
+    width: 300px;
+    height: 300px;
+  }
+  .ch-ring--2 {
+    width: 390px;
+    height: 390px;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .ch-section {
+    padding: 90px 0 60px;
+  }
+  .ch-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .ch-deco {
+    display: none;
+  }
+  .ch-desc {
+    max-width: 100%;
+  }
+  .ch-bg-orb--1 {
+    width: 400px;
+    height: 400px;
+    right: -100px;
+    top: -50px;
+  }
+  .ch-features {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ch-section {
+    padding: 80px 0 52px;
+    min-height: auto;
+  }
+  .ch-container {
+    padding: 0 20px;
+  }
+  /* 2 columns on tablet portrait */
+  .ch-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ch-section {
+    padding: 72px 0 44px;
+  }
+  .ch-container {
+    padding: 0 16px;
+  }
+  .ch-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+  /* Stack to 1 column on mobile */
+  .ch-features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .ch-feature {
+    align-items: flex-start;
+  }
+  .ch-feature-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+  }
+}
+
+@media (max-width: 399.98px) {
+  .ch-container {
+    padding: 0 14px;
+  }
+  .ch-feature-title {
+    font-size: 13px;
+  }
+  .ch-feature-desc {
+    font-size: 12px;
+  }
+}

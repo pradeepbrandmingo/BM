@@ -1,0 +1,231 @@
+/* ============================================================
+   PortfolioPage.css — tight spacing, fully responsive
+   ============================================================ */
+
+.portfolio-page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* ════════════════════════════════════════
+   HERO
+   ════════════════════════════════════════ */
+.pf-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 0 36px; /* top/bottom tight */
+  margin-bottom: 16px;
+  background: #050505;
+}
+
+/* Orbs */
+.pf-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+}
+.pf-orb--1 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(
+    circle,
+    rgba(var(--theme-color1-rgb), 0.18) 0%,
+    transparent 70%
+  );
+  top: -120px;
+  right: 5%;
+}
+.pf-orb--2 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(var(--theme-color1-rgb), 0.09) 0%,
+    transparent 70%
+  );
+  bottom: -60px;
+  left: 30%;
+}
+.pf-orb--3 {
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(
+    circle,
+    rgba(var(--theme-color1-rgb), 0.13) 0%,
+    transparent 70%
+  );
+  top: 10px;
+  right: 35%;
+}
+
+/* Hero inner */
+.pf-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Sub tag */
+.pf-subtag {
+  margin-bottom: 10px;
+}
+
+/* Heading */
+.pf-heading {
+  font-size: clamp(30px, 4.5vw, 52px);
+  font-weight: var(--h2-font-weight);
+  color: var(--headings-color);
+  font-family: var(--heading-font-family);
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+  margin: 0 0 14px;
+}
+.pf-heading span {
+  color: var(--theme-color1);
+}
+
+/* Description */
+.pf-subtext {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--body-font-family);
+  line-height: 1.65;
+  margin: 0 0 24px;
+  max-width: 540px;
+}
+
+/* ════════════════════════════════════════
+   FILTER TABS
+   ════════════════════════════════════════ */
+.pf-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.pf-filter-btn {
+  padding: 9px 20px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-family: var(--heading-font-family);
+  cursor: pointer;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+  line-height: 1;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.pf-filter-btn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.pf-filter-btn.is-active {
+  background: var(--theme-color1);
+  border-color: var(--theme-color1);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(var(--theme-color1-rgb), 0.4);
+}
+
+/* ════════════════════════════════════════
+   GRID
+   ════════════════════════════════════════ */
+.pf-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.pf-empty {
+  text-align: center;
+  padding: 60px 0;
+  color: rgba(255, 255, 255, 0.25);
+  font-family: var(--body-font-family);
+  font-size: 15px;
+  width: 100%;
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════ */
+
+/* Large tablet */
+@media (max-width: 992px) {
+  .pf-hero {
+    padding: 30px 0 30px;
+    margin-bottom: 12px;
+  }
+  .pf-heading {
+    font-size: clamp(26px, 4vw, 40px);
+  }
+}
+
+/* Tablet / mobile landscape */
+@media (max-width: 768px) {
+  .pf-hero {
+    padding: 26px 0 26px;
+    margin-bottom: 10px;
+  }
+  .pf-subtext {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .pf-filter-btn {
+    padding: 8px 15px;
+    font-size: 10px;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .pf-hero {
+    padding: 22px 0 22px;
+    margin-bottom: 8px;
+  }
+  .pf-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .pf-subtext {
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+  .pf-filters {
+    gap: 6px;
+  }
+  .pf-filter-btn {
+    padding: 7px 12px;
+    font-size: 9px;
+  }
+}
+
+/* Very small */
+@media (max-width: 360px) {
+  .pf-heading {
+    font-size: 22px;
+  }
+  .pf-filter-btn {
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+}
+
+/* Hide orbs on mobile — no orange shadow */
+@media (max-width: 768px) {
+  .pf-orb {
+    display: none;
+  }
+}
