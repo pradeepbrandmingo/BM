@@ -140,7 +140,7 @@ const PortfolioPage = () => {
             )}
           </div>
         </div>
-      </section>
+      </section> 
 
       {activeProject && (
         <PortfolioPopup project={activeProject} onClose={closePopup} />
