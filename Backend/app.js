@@ -70,11 +70,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // ================= CORS =================
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://bm-henna-chi.vercel.app",
-];
-
+const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:5173"];
+console.log("CLIENT_URL:", process.env.CLIENT_URL);
 app.use(
   cors({
     origin: function (origin, callback) {
