@@ -70,7 +70,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // ================= CORS =================
-const allowedOrigins = ["http://localhost:5173", "https://bm-rm5l.vercel.app"];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://bm-henna-chi.vercel.app",
+];
 
 app.use(
   cors({
