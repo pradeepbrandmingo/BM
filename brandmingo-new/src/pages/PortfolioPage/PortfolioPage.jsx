@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import PortfolioPopup from "../../components/PortfolioPopup/PortfolioPopup";
+import PopUpPortfolio from "../../components/PopUpPortfolio/PopUpPortfolio";
 import projects from "../../data/projects";
 import "./PortfolioPage.css";
 
@@ -140,10 +140,10 @@ const PortfolioPage = () => {
             )}
           </div>
         </div>
-      </section> 
+      </section>
 
       {activeProject && (
-        <PortfolioPopup project={activeProject} onClose={closePopup} />
+        <PopUpPortfolio project={activeProject} onClose={closePopup} />
       )}
     </>
   );

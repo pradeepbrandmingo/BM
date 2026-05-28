@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import PortfolioPopup from "../PortfolioPopup/PortfolioPopup";
+import PopUpPortfolio from "../PopUpPortfolio/PopUpPortfolio";
 
 // ── Icons ────────────────────────────────────────────────────────────
 import star from "../../assets/images/icons/star.png";
@@ -115,7 +115,7 @@ const ProjectSection = () => {
       </section>
 
       {activeProject && (
-        <PortfolioPopup project={activeProject} onClose={closePopup} />
+        <PopUpPortfolio project={activeProject} onClose={closePopup} />
       )}
     </>
   );
