@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import PortfolioPopup from "../../components/Portfoliopopup/Portfoliopopup";
+import PortfolioPopup from "../../components/PortfolioPopup/PortfolioPopup";
 import projects from "../../data/projects";
 import "./PortfolioPage.css";
 

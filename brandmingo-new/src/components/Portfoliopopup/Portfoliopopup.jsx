@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import "./Portfoliopopups.css";
+import "./PortfolioPopup.css";
 
 /* ─── meta row config — order controls display order ─────────────── */
 const META_ROWS = [
