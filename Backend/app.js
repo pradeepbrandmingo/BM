@@ -13,28 +13,42 @@
 
 // const app = express();
 
-// // SECURITY
+// // ================= SECURITY =================
 // app.use(helmet());
 
-// // LOGS
+// // ================= LOGS =================
 // app.use(morgan("dev"));
 
-// // BODY PARSER
+// // ================= BODY PARSER =================
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 
-// // COOKIE
+// // ================= COOKIE =================
 // app.use(cookieParser());
 
-// // CORS
+// // ================= CORS =================
+// const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:5173"];
+// console.log("CLIENT_URL:", process.env.CLIENT_URL);
 // app.use(
 //   cors({
-//     origin: process.env.CLIENT_URL,
+//     origin: function (origin, callback) {
+//       // allow requests with no origin
+//       if (!origin || allowedOrigins.includes(origin)) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("CORS Not Allowed"));
+//       }
+//     },
 //     credentials: true,
 //   }),
 // );
 
-// // ROUTES
+// // ================= ROOT ROUTE =================
+// app.get("/", (req, res) => {
+//   res.send("Backend Running 🚀");
+// });
+
+// // ================= ROUTES =================
 // app.use("/api/auth", authRoutes);
 // app.use("/api/blogs", blogRoutes);
 // app.use("/api/dashboard", dashboardRoutes);
@@ -56,6 +70,20 @@ dotenv.config();
 
 const app = express();
 
+// ================= CORS =================
+const corsOptions = {
+  origin: ["http://localhost:5173", "https://bm-henna-chi.vercel.app"],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+// Apply CORS middleware
+app.use(cors(corsOptions));
+
+// Handle preflight requests
+app.options("*", cors(corsOptions));
+
 // ================= SECURITY =================
 app.use(helmet());
 
@@ -68,23 +96,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // ================= COOKIE =================
 app.use(cookieParser());
-
-// ================= CORS =================
-const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:5173"];
-console.log("CLIENT_URL:", process.env.CLIENT_URL);
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      // allow requests with no origin
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("CORS Not Allowed"));
-      }
-    },
-    credentials: true,
-  }),
-);
 
 // ================= ROOT ROUTE =================
 app.get("/", (req, res) => {
