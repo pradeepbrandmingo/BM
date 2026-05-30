@@ -39,8 +39,9 @@
   **********************************************/
 @import url("https://fonts.cdnfonts.com/css/beatrice-display-trial");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=mont:wght@300;400;500;600&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=mont:wght@300;400;500;600&display=swap"); */
 @import url("animate.css");
 /* @import url("swiper.min.css"); */
 /* @import url("slick.css"); */
@@ -103,8 +104,10 @@
   --link-hover-color: var(--theme-color2);
   /* --body-font-family: "Beatrice Trial", sans-serif;
   --heading-font-family: "Beatrice Trial", sans-serif; */
-  --body-font-family: "Mont", sans-serif;
-  --heading-font-family: "Poppins", sans-serif;
+  /* --body-font-family: "Mont", sans-serif;
+  --heading-font-family: "Poppins", sans-serif; */
+  --body-font-family: "Poppins", sans-serif;
+  --heading-font-family: "Inter", sans-serif;
   /* --body-font-size: 16px;
   --body-line-height: 1.2; */
   --body-font-size: 16px;
@@ -168,13 +171,35 @@
   color: var(--text-color-light);
 }
 
-h1,
+/* h1,
 h2,
 h3 {
   font-family: var(--heading-font-family);
   color: var(--headings-color);
   line-height: 1.05;
   text-transform: none;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+  color: var(--headings-color);
+  text-transform: none;
+}
+
+body,
+p,
+span,
+a,
+li,
+button,
+input,
+textarea {
+  font-family: var(--body-font-family);
 }
 
 h1,
