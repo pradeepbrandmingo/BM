@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import "./webdev-about.css";
+
+const webDevHero = "https://i.ibb.co/3YFS8j0N/BM-Site-Images.jpg";
 
 const NAV = [
   { fa: "fa-solid fa-code", label: "React Development", to: "/react" },
@@ -22,28 +23,28 @@ const NAV = [
 const REASONS = [
   {
     fa: "fa-solid fa-shield-halved",
-    title: "Establish Instant Credibility",
-    desc: "Build a strong first impression with a professional online presence that makes your business look trustworthy and reliable from the first visit.",
+    title: "Build Instant Trust",
+    desc: "Create a professional online presence that helps your business look credible and reliable from the very first visit",
   },
   {
     fa: "fa-solid fa-desktop",
-    title: "Present Your Offer Clearly",
-    desc: "Showcase your services, products, and value in a structured and visually engaging way that helps customers understand exactly what you offer.",
+    title: "Showcase Your Services Clearly",
+    desc: "Present your services and offers in a way that helps customers quickly understand your value.",
   },
   {
     fa: "fa-solid fa-users",
-    title: "Capture Opportunities 24/7",
-    desc: "Your website works around the clock—collecting leads, inquiries, and potential customers even when your business is offline.",
+    title: "Generate Leads 24/7",
+    desc: "Your website keeps working around the clock by capturing inquiries and potential customers anytime.",
   },
   {
     fa: "fa-solid fa-chart-line",
-    title: "Get Discovered on Search Engines",
-    desc: "An SEO-optimized website helps your business appear when people are actively searching for your services online.",
+    title: "Get Found on Google",
+    desc: "SEO-focused websites help your business appear when customers search for services online.",
   },
   {
     fa: "fa-solid fa-crown",
-    title: "Compete in a Digital-First Market",
-    desc: "Stand strong against competitors by creating a powerful online presence that attracts, engages, and converts your audience.",
+    title: "Stay Ahead of Competitors",
+    desc: "Stand out in the digital market with a strong online presence that attracts and converts customers.",
   },
 ];
 
@@ -123,6 +124,8 @@ const WebDevAbout = () => {
         <aside className="wda-sidebar">
           {/* ── CARD 1: Logo ── */}
           <div className="wda-main-card">
+            {" "}
+            {/* className="wda-hero" */}
             <div className="wda-logo-row">
               <div className="wda-logo-img">
                 <i className="fa-solid fa-layer-group" />
@@ -203,15 +206,21 @@ const WebDevAbout = () => {
           </div>
 
           {/* ── CARD 5: PDF (separate) ── */}
-          <div className="wda-pdf-card">
+          <a
+            href="src/assets/images/Brochure/BM Brochure.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="wda-pdf-card"
+          >
             <span className="wda-dl-label">
               <i className="fa-solid fa-file-pdf" />
               Brochure (PDF)
             </span>
+
             <div className="wda-dl-btn">
               <i className="fa-solid fa-download" />
             </div>
-          </div>
+          </a>
         </aside>
         {/* ══ END SIDEBAR ══ */}
 
@@ -219,6 +228,11 @@ const WebDevAbout = () => {
         <main className="wda-main">
           {/* Hero image */}
           <div className="wda-hero">
+            <img
+              src={webDevHero}
+              alt="Website Development Banner - Brandmingo"
+              className="wda-hero-img"
+            />
             <div className="wda-hero-ov">
               <div className="wda-hero-txt">
                 <div className="wda-hero-badge">
@@ -243,20 +257,16 @@ const WebDevAbout = () => {
               Understanding the Power of Web Development
             </h2>
             <p className="wda-p">
-              Web development is the backbone of your online presence. It
-              involves crafting websites and web applications that are not only
-              visually appealing but also technically strong, fast, and
-              user-focused. From business websites to advanced digital
-              platforms, modern web development ensures seamless functionality,
-              performance, and scalability.
+              A strong website is more than just an online presence. It is the
+              foundation of your brand in the digital world. From creating trust
+              to attracting customers, modern web development helps businesses
+              build faster, smarter, and more engaging digital experiences.
               <br />
               <br />
-              In today’s digital-first world, your website plays a critical role
-              in how your brand is perceived. It acts as your 24/7 growth
-              engine—helping you generate leads, build credibility, and deliver
-              a consistent user experience. A strategically developed website
-              gives your business a competitive edge and turns your online
-              presence into a revenue-driving asset.
+              In today’s competitive market, your website works as your
+              business’s 24/7 growth engine. A professionally developed website
+              helps you generate leads, improve user experience, strengthen
+              credibility, and turn visitors into loyal customers.
             </p>
 
             <div className="wda-lbl" style={{ marginTop: "40px" }}>
@@ -292,8 +302,8 @@ const WebDevAbout = () => {
                 <i className="fa-solid fa-quote-right" />
               </div>
               <span>
-                A website is no longer a choice — it’s a critical part of your—{" "}
-                <em>business growth strategy.</em>
+                A website is no longer optional. It’s one of the most{" "}
+                <em>powerful tools for business growth.</em>
               </span>
             </div>
 
@@ -301,17 +311,16 @@ const WebDevAbout = () => {
             <div className="wda-img-cards">
               <div className="wda-img-card">
                 <img
-                  src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=700"
-                  alt="Modern Web Development"
+                  src="https://i.ibb.co/jvrt6Xy0/laptop-with-code-desk-home-office-980225-34580.jpg"
+                  alt="website-developement-banner-image-Brandmingo"
                 />
                 <div className="wda-img-card-body">
                   <div className="wda-img-card-icon">
                     <i className="fa-solid fa-laptop-code" />
                   </div>
                   <p>
-                    Modern, fast-loading, and fully responsive websites designed
-                    to deliver seamless user experiences and maximize business
-                    performance.
+                    Modern, fast-loading websites designed to create seamless
+                    user experiences and better business performance.
                   </p>
                   <a href="#contact" className="wda-img-card-arrow">
                     <i className="fa-solid fa-arrow-right" />
@@ -321,7 +330,7 @@ const WebDevAbout = () => {
 
               <div className="wda-img-card">
                 <img
-                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=700"
+                  src="https://i.ibb.co/Zz0MNRM4/website-developement-image-Brandmingo.avif"
                   alt="E-commerce Solutions"
                 />
                 <div className="wda-img-card-body">
@@ -329,9 +338,8 @@ const WebDevAbout = () => {
                     <i className="fa-solid fa-cart-shopping" />
                   </div>
                   <p>
-                    Custom-built platforms and eCommerce solutions focused on
-                    increasing engagement, improving conversions, and driving
-                    consistent revenue.
+                    Custom web solutions and eCommerce platforms focused on
+                    increasing engagement, conversions, and revenue.
                   </p>
                   <a href="#contact" className="wda-img-card-arrow">
                     <i className="fa-solid fa-arrow-right" />

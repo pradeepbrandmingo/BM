@@ -1,50 +1,46 @@
 import React, { useEffect, useRef, useState } from "react";
-// import "./webdev-extra.css";
-
-/* ══════════════════════════════════════════
-   DATA
-══════════════════════════════════════════ */
+import { useNavigate } from "react-router-dom";
 
 const DIFF_FEATURES = [
   {
     fa: "fa-solid fa-mobile-screen",
     title: "Mobile Responsive",
-    desc: "Deliver a seamless and consistent experience across all screen sizes, ensuring your website performs perfectly on mobile, tablet, and desktop.",
+    desc: "Seamless website experience across mobile, tablet, and desktop devices.",
   },
   {
     fa: "fa-solid fa-magnifying-glass",
     title: "SEO Optimized",
-    desc: "Structured with clean code, fast loading speed, and SEO best practices to improve visibility and rankings on search engines.",
+    desc: "Built with clean structure and SEO best practices to improve online visibility.",
   },
   {
     fa: "fa-solid fa-bolt",
     title: "High Performance",
-    desc: "Optimized for speed and efficiency to reduce load times, improve engagement, and enhance overall user experience.",
+    desc: "Fast-loading websites optimized for speed, engagement, and smooth user experience.",
   },
   {
     fa: "fa-solid fa-bullseye",
     title: "Conversion Focused",
-    desc: "Strategically designed layouts and user journeys that guide visitors toward taking action — turning traffic into real customers.",
+    desc: "Strategic layouts designed to turn visitors into leads and paying customers.",
   },
   {
     fa: "fa-solid fa-sliders",
     title: "Easy to Manage",
-    desc: "User-friendly backend systems that allow you to update content, manage data, and control your website without technical complexity.",
+    desc: "User-friendly backend systems that make website management simple and hassle-free.",
   },
 ];
 
 const ECOM_ALLOWS = [
-  "Sell your products 24/7 without interruptions",
-  " Accept secure online payments instantly",
-  "Manage orders, inventory, and customers efficiently",
-  "Expand your reach beyond your local market",
+  "Sell your products 24/7",
+  "Accept secure online payments",
+  "Manage orders and inventory easily",
+  "Reach customers beyond your local market",
 ];
 
 const ECOM_PROVIDES = [
-  "Complete Shopify or custom store setup",
+  "Complete Shopify and custom store setup",
   "Secure payment gateway integration",
-  "Product, inventory, and order management systems",
-  "Conversion-focused UI/UX design for higher sales",
+  "Inventory and order management systems",
+  "Conversion-focused UI/UX design for better sales",
 ];
 
 const PLATFORMS = [
@@ -52,25 +48,29 @@ const PLATFORMS = [
     fa: "fa-brands fa-shopify",
     title: "Shopify",
     sub: "BEST FOR",
-    desc: "Product-based businesses & online stores",
+    desc: "Product-based businesses and online stores.",
+    link: "/shopify",
   },
   {
     fa: "fa-brands fa-wordpress",
     title: "WordPress",
     sub: "BEST FOR",
-    desc: "Service-based websites, blogs, and SEO-focused businesses",
+    desc: "Service-based websites, blogs, and SEO-focused businesses.",
+    link: "/wordpress",
   },
   {
     fa: "fa-brands fa-react",
     title: "React",
     sub: "BEST FOR",
-    desc: "High-performance websites & advanced user interfaces",
+    desc: "High-performance websites and advanced user experiences",
+    link: "/react",
   },
   {
     fa: "fa-solid fa-code",
     title: "Custom Dev",
     sub: "BEST FOR",
-    desc: " Unique business models & advanced functionality",
+    desc: " Businesses that need custom features and scalable web solutions.",
+    link: "/crm-development",
   },
 ];
 
@@ -78,22 +78,22 @@ const FAQS = [
   {
     fa: "fa-solid fa-circle-question",
     q: " What types of websites do you develop?",
-    a: "We develop a wide range of websites including business websites, eCommerce stores, portfolio websites, landing pages, and custom web applications. Each solution is tailored to your specific business goals and audience.",
+    a: "We develop business websites, eCommerce stores, portfolio websites, landing pages, custom web applications, booking platforms, and SEO-focused websites tailored to different industries and business goals.",
   },
   {
     fa: "fa-solid fa-layer-group",
-    q: " Which platform is best for my business Shopify, WordPress, or React?",
-    a: "The right platform depends on your business needs. Shopify is ideal for eCommerce, WordPress works best for service-based and content-driven websites, and React is perfect for high-performance, custom web applications. We guide you in choosing the most suitable platform.",
+    q: " Which platform is best for my business: Shopify, WordPress, or React?",
+    a: "It depends on your business requirements. Shopify is ideal for online stores, WordPress works best for service-based and content-focused websites, while React is perfect for high-performance and custom web applications with advanced functionality.",
   },
   {
     fa: "fa-solid fa-mobile-screen",
     q: "Will my website be mobile-friendly and SEO optimized?",
-    a: "Yes, all our websites are fully responsive and built using SEO best practices. We ensure fast loading speed, clean code structure, and proper optimization to improve your search engine visibility.",
+    a: "Yes. Every website we build is fully responsive and optimized for speed, mobile devices, clean code structure, and SEO best practices to help improve visibility and user experience.",
   },
   {
     fa: "fa-solid fa-gear",
-    q: " What is your web development process?",
-    a: "Our process includes understanding your business, planning the structure, designing UI/UX, development, testing, and final launch. This ensures your website is delivered with high performance, usability, and quality.",
+    q: "What is your web development process?",
+    a: "Our process includes business research, planning, UI/UX design, development, testing, optimization, and launch. We focus on creating websites that are visually strong, technically reliable, and built for long-term growth.",
   },
 ];
 
@@ -134,11 +134,9 @@ const WebDevDiff = () => {
               <span> Websites Apart</span>
             </h3>
             <p className="wde-desc">
-              Most websites look good but fail to deliver results. We focus on
-              building performance-driven websites that not only represent your
-              brand but actively contribute to your business growth. Every
-              element is designed with purpose, strategy, and user behavior in
-              mind.
+              We build websites that are not just visually impressive but
+              strategically designed to improve performance, engagement, and
+              business growth.
             </p>
             <div className="wde-gradient-bar" />
           </div>
@@ -168,8 +166,9 @@ const WebDevDiff = () => {
                 <i className="fa-solid fa-rocket" />
               </div>
               <p>
-                A website should do more than exist conversions,
-                <em> it should actively drive leads,</em> and business growth.
+                A website should do more than just exist.
+                <em> It should actively generate leads</em> and drive business
+                growth.
               </p>
             </div>
           </div>
@@ -190,16 +189,16 @@ const WebDevEcom = () => {
         <div className="wdec-grid">
           {/* Left */}
           <div className="wdec-left">
-            <div className="wds-section-label">Grow Your Business</div>
+            <div className="wds-section-label">GROW YOUR BUSINESS</div>
             <h3 className="wdec-heading">
-              Ready to Take Your Business <span>Online with E-commerce?</span>
+              Ready to Take Your Business
+              <span>Online with eCommerce?</span>
             </h3>
             <div className="wdec-divider" />
             <p className="wdec-desc">
-              If you're still relying only on offline sales, you're missing out
-              on massive growth opportunities. An eCommerce website allows you
-              to sell your products anytime, reach a wider audience, and scale
-              your business without limitations.
+              An eCommerce website helps you sell products online, reach more
+              customers, and grow your business without location or time
+              limitations.
             </p>
           </div>
 
@@ -255,6 +254,7 @@ const WebDevEcom = () => {
    Mobile: stacked single col
 ══════════════════════════════════════════ */
 const WebDevPlatform = () => {
+  const navigate = useNavigate();
   const [ref, visible] = useVisible(0.08);
   return (
     <section className="wdpl" ref={ref}>
@@ -268,11 +268,9 @@ const WebDevPlatform = () => {
               <span> Right</span> for Your Business?
             </h3>
             <p className="wdpl-desc">
-              Choosing the right platform is crucial for your website’s
-              performance and long-term growth. Each platform serves a different
-              purpose — and selecting the wrong one can cost time, money, and
-              opportunities. We help you make the right decision based on your
-              business goals, scalability needs, and budget.
+              Choosing the right platform plays a huge role in your website’s
+              performance, scalability, and future growth. We help you choose
+              the best solution based on your business goals and requirements.
             </p>
           </div>
 
@@ -283,7 +281,9 @@ const WebDevPlatform = () => {
                 <div
                   key={i}
                   className={`wdpl-card${visible ? " wde-anim" : ""}`}
-                  style={visible ? { animationDelay: `${i * 0.1}s` } : {}}
+                  onClick={() => navigate(p.link)}
+                  role="button"
+                  tabIndex={0}
                 >
                   {/* Icon + text */}
                   <div className="wdpl-card-inner">
@@ -313,8 +313,8 @@ const WebDevPlatform = () => {
                 <i className="fa-solid fa-lightbulb" />
               </div>
               <p>
-                Tailor-made solutions built specifically for your requirements,
-                offering complete flexibility, control, and scalability.
+                Tailor-made web solutions built for flexibility, performance,
+                and long-term business growth.
               </p>
             </div>
           </div>
@@ -335,7 +335,7 @@ const WebDevFaq = () => {
   return (
     <section className="wdfq" ref={ref}>
       <div className="wdfq-container">
-        <div className="wds-section-label">QUESTIONS? WE'VE GOT ANSWERS</div>
+        <div className="wds-section-label">QUESTIONS? WE’VE GOT ANSWERS</div>
         <h3 className="wdfq-heading">Frequently Asked Questions</h3>
 
         <div className="wdfq-list">

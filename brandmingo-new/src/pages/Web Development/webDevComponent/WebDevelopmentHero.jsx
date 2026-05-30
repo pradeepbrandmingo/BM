@@ -5,22 +5,22 @@ const WebDevelopmentHero = ({ openPopup }) => {
     {
       icon: "fas fa-bolt",
       title: "Lightning Fast",
-      desc: "Optimized for speed using modern technologies to ensure faster load times, smooth performance, and better user experience.",
+      desc: "Fast-loading websites designed for smooth performance and better user experience.",
     },
     {
       icon: "fas fa-mobile-alt",
       title: "100% Responsive",
-      desc: "Fully responsive websites that deliver seamless performance across mobile, tablet, and desktop devices.",
+      desc: "Seamless website experience across mobile, tablet, and desktop devices.",
     },
     {
       icon: "fas fa-search",
       title: "SEO Optimized",
-      desc: "Built with clean code structure and SEO best practices to help your website rank higher and perform better on search engines.",
+      desc: "SEO-friendly websites built to improve visibility and search rankings.",
     },
     {
       icon: "fas fa-shield-alt",
       title: "Secure & Scalable",
-      desc: "Developed with strong security standards and scalable architecture to support your business growth without limitations.",
+      desc: "Secure and scalable websites built for long-term business growth.",
     },
   ];
 
@@ -679,22 +679,19 @@ const WebDevelopmentHero = ({ openPopup }) => {
             {/* ── LEFT CONTENT ── */}
             <div className="wd-hero-content">
               <div className="wd-tagline">
-                <i className="fas fa-bolt" /> Build. Scale. Dominate Online.
+                <i className="fas fa-bolt" /> BUILD. SCALE. DOMINATE ONLINE.
               </div>
 
               <h3>
-                Custom Web Development
+                Custom Websites
                 <br />
-                That Drives{" "}
-                <span className="wd-title-accent">Business Growth</span>
+                Built to Grow{" "}
+                <span className="wd-title-accent"> Your Business</span>
               </h3>
 
               <p className="wd-description">
-                We don’t just build websites — we engineer fast, secure, and
-                high-performing digital experiences that attract the right
-                audience, boost engagement, and convert visitors into customers.
-                Our custom web development solutions are designed to deliver
-                measurable growth for your business.
+                We create modern, high-performing websites that help businesses
+                attract customers, build trust, and grow faster online.
               </p>
 
               <div className="wd-btn-group">

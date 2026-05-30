@@ -13,7 +13,7 @@ const AdsAndCampaigns = () => {
       {/* MAIN */}
       <section
         className="services-details pt-120 pb-120"
-        style={{ marginTop: "40px", marginBottom: "120px" }}
+        // style={{ marginTop: "40px", marginBottom: "120px" }}
       >
         <div className="service-details-page">
           <div className="container">

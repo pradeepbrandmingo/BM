@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { openEnquiryPopup } from "../../../utils/popup";
 // import "./webdev-sections.css";
 
 /* ── DATA ── */
@@ -7,25 +8,25 @@ const WEBSITE_TYPES = [
     fa: "fa-solid fa-briefcase",
     num: "01",
     title: "Business Website",
-    desc: "A professional website designed to showcase your services, build credibility, and help potential customers understand your offerings with clarity.",
+    desc: "Professional business websites designed to build trust, showcase services, and generate quality leads online.",
   },
   {
     fa: "fa-solid fa-cart-shopping",
     num: "02",
-    title: "E-commerce Website",
-    desc: "Sell your products online with a powerful eCommerce platform featuring secure payments, smooth checkout, and seamless order management.",
+    title: "eCommerce Website",
+    desc: "Powerful online stores with secure payments, smooth checkout, and seamless shopping experiences.",
   },
   {
     fa: "fa-solid fa-palette",
     num: "03",
     title: "Portfolio Website",
-    desc: "Showcase your work, projects, and achievements through a visually engaging portfolio that builds trust and attracts new opportunities.",
+    desc: "Creative portfolio websites that showcase your work professionally and help attract new opportunities.",
   },
   {
     fa: "fa-solid fa-gear",
     num: "04",
     title: "Custom Web Applications",
-    desc: "Tailor-made web solutions such as dashboards, booking systems, and CRM tools built to streamline operations and scale your business.",
+    desc: "Custom-built web platforms, dashboards, and systems designed to simplify operations and scale your business.",
   },
 ];
 
@@ -33,22 +34,22 @@ const TECHNOLOGIES = [
   {
     fa: "fa-brands fa-react",
     title: "React Development",
-    desc: "Build lightning-fast, interactive, and scalable web applications with modern UI experiences powered by React.",
+    desc: "Fast and interactive web applications built with modern React technology for smooth user experiences.",
   },
   {
     fa: "fa-brands fa-shopify",
     title: "Shopify Development",
-    desc: "Create high-converting eCommerce stores with seamless user experience, secure payment integration, and easy management.",
+    desc: "High-converting Shopify stores designed for seamless shopping and better online sales performance.",
   },
   {
     fa: "fa-brands fa-wordpress",
     title: "WordPress Development",
-    desc: "Develop flexible and SEO-friendly websites with powerful customization options tailored to your business needs.",
+    desc: "Flexible and SEO-friendly WordPress websites built for easy management and business growth.",
   },
   {
     fa: "fa-brands fa-php",
     title: "PHP Development",
-    desc: "Robust backend development for custom web applications, ensuring performance, security, and scalability.",
+    desc: "Secure and scalable backend development for custom websites and web applications.",
   },
 ];
 
@@ -57,31 +58,31 @@ const PROCESS_STEPS = [
     num: "01",
     fa: "fa-solid fa-magnifying-glass-chart",
     title: "Understanding Your Business",
-    desc: "We dive deep into your business goals, target audience, and market landscape to build a strong strategic foundation before development begins.",
+    desc: "We understand your goals, audience, and business needs before starting the development process.",
   },
   {
     num: "02",
     fa: "fa-solid fa-file-lines",
-    title: " Planning & Structure",
-    desc: "We map out the complete website architecture, user flow, and content structure to ensure a smooth and intuitive user experience.",
+    title: "Planning & Structure",
+    desc: "We create the website structure and user flow to ensure a smooth and intuitive experience.",
   },
   {
     num: "03",
     fa: "fa-solid fa-pen-ruler",
     title: "UI/UX Design",
-    desc: "We create visually engaging, user-focused designs that reflect your brand identity and are optimized for usability and conversions.",
+    desc: "Modern and user-focused designs crafted to reflect your brand and improve engagement.",
   },
   {
     num: "04",
     fa: "fa-solid fa-code",
     title: "Development",
-    desc: "Using modern technologies, we build fast, secure, and fully responsive websites tailored to your business requirements.",
+    desc: "We build fast, responsive, and scalable websites using modern development technologies.",
   },
   {
     num: "05",
     fa: "fa-solid fa-rocket",
     title: "Testing & Launch",
-    desc: "We rigorously test your website across devices and browsers to ensure flawless performance before a smooth and successful launch.",
+    desc: "Every website is tested carefully to ensure smooth performance before going live.",
   },
 ];
 
@@ -117,10 +118,9 @@ const WebDevTypes = () => {
               Website Solutions Tailored to Your Business Needs
             </h3>
             <p className="wds-types-desc">
-              Every business has different goals and your website should reflect
-              that. We don’t believe in one-size-fits-all solutions. Instead, we
-              understand your requirements and build the right type of website
-              that aligns with your growth strategy, audience, and industry.
+              Every business is different, and your website should reflect that.
+              We create tailored web solutions designed around your goals,
+              audience, and growth strategy.
             </p>
 
             {/* Decorative dot grid + arc */}
@@ -194,9 +194,13 @@ const WebDevTypes = () => {
                 </div>
                 <h4 className="wds-card-title">{item.title}</h4>
                 <p className="wds-card-desc">{item.desc}</p>
-                <a href="#contact" className="wds-card-link">
+                <button
+                  type="button"
+                  className="wds-card-link"
+                  onClick={openEnquiryPopup}
+                >
                   Learn More <i className="fa-solid fa-arrow-right" />
-                </a>
+                </button>
               </div>
             ))}
           </div>
@@ -233,18 +237,14 @@ const WebDevTech = () => {
         <div className="wdt-grid">
           {/* Left */}
           <div className="wdt-left">
-            <div className="wds-section-label">
-              BUILT WITH MODERN TECHNOLOGIES
-            </div>
+            <div className="wds-section-label">BUILT WITH MODERN TECH</div>
             <h3 className="wdt-heading">
-              Technologies That Power High-Performance Websites
+              Tech That Power High-Performance Websites
             </h3>
             <p className="wdt-desc">
-              We leverage modern, scalable, and performance-driven technologies
-              to build websites that are fast, secure, and future-ready. Every
-              technology we use is carefully selected based on your business
-              requirements to ensure maximum efficiency, flexibility, and
-              long-term growth.
+              We use modern and scalable technologies to build fast, secure, and
+              future-ready websites tailored to your business goals and growth
+              needs.
             </p>
           </div>
 
@@ -303,10 +303,9 @@ const WebDevProcess = ({ openPopup }) => {
             <div className="wds-section-label">OUR WORKFLOW</div>
             <h3 className="wdp-heading">Our Proven Web Development Process</h3>
             <p className="wdp-desc">
-              A successful website is built on strategy, not guesswork. Our
-              step-by-step web development process ensures every project is
-              delivered with clarity, precision, and performance in mind — from
-              initial planning to final launch.
+              Every successful website starts with a clear strategy. Our
+              step-by-step development process helps us create websites that are
+              fast, user-focused, and built for business growth.
             </p>
 
             {/* CTA box */}
@@ -317,15 +316,15 @@ const WebDevProcess = ({ openPopup }) => {
               <div className="wdp-cta-text">
                 <h4>Have a project in mind?</h4>
                 <p>
-                  Let’s turn your ideas into a powerful digital experience that
-                  delivers real results.
+                  Let’s build a powerful digital experience that helps your
+                  business grow online.
                 </p>
                 <button
                   className="wdp-cta-btn"
                   onClick={openPopup}
                   type="button"
                 >
-                  Let's Talk <i className="fa-solid fa-arrow-right" />
+                  Let’s Talk <i className="fa-solid fa-arrow-right" />
                 </button>
               </div>
             </div>

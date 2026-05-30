@@ -26259,12 +26259,26 @@ body {
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  background: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200")
-    center / cover;
+  /* background: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200")
+    center / cover; */
+
   flex-shrink: 0;
 }
+/* .wda-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+} */
 
-.wda-hero-ov {
+.wda-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* .wda-hero-ov {
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -26274,7 +26288,22 @@ body {
   );
   display: flex;
   align-items: flex-end;
-  padding: 32px 36px; /* slightly reduced from 36px 40px */
+  padding: 32px 36px;
+} */
+
+.wda-hero-ov {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.15) 55%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 32px 36px;
+  z-index: 2;
 }
 
 .wda-hero-badge {
@@ -26866,7 +26895,7 @@ body {
   margin-bottom: 20px;
 }
 
-.wds-card-link {
+/* .wds-card-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -26877,6 +26906,59 @@ body {
   text-decoration: none;
   letter-spacing: 0.3px;
   transition: gap 0.3s ease;
+} */
+.wds-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+
+  font-family: var(--heading-font-family);
+  font-size: 12px;
+  font-weight: var(--h6-font-weight);
+  color: var(--theme-color1);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* .wds-card-link {
+  color: var(--theme-color1);
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+} */
+
+.wds-card-link:hover {
+  color: #ff8a4c;
+}
+
+.wds-card-link:active {
+  transform: scale(0.96);
+  opacity: 0.8;
+}
+
+.wds-card-link:visited {
+  color: var(--theme-color1);
+}
+
+.wds-card-link i {
+  transition: transform 0.3s ease;
+}
+
+.wds-card-link:hover i {
+  transform: translateX(4px);
 }
 
 .wds-type-card:hover .wds-card-link {
@@ -27729,6 +27811,9 @@ body {
   padding: 0 24px;
   position: relative;
   z-index: 1;
+}
+.wdpl-card {
+  cursor: pointer;
 }
 
 /* Two-column page grid */
