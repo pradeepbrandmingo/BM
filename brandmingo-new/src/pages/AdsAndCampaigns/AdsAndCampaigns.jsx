@@ -22,8 +22,14 @@ const AdsAndCampaigns = () => {
                 <div className="services-details__content">
                   {/* S1 */}
                   <AdsAndCampaignsAbout />
-                  <AdsAndCampaignsSections />
-                  <AdsAndCampaignsExtra />
+
+                  <div className="WebDev-Services-spacing">
+                    <AdsAndCampaignsSections />
+                  </div>
+
+                  <div className="WebDev-Extra-spacing">
+                    <AdsAndCampaignsExtra />
+                  </div>
                 </div>
               </div>
             </div>

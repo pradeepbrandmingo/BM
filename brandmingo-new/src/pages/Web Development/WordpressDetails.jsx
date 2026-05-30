@@ -14,6 +14,8 @@ import WordpressPricingPlans from "../../servicespags/wordPressComponents/Wordpr
 import WordpressWhyChooseBm from "../../servicespags/wordPressComponents/WordpressWhyChooseBm";
 import WordpressEngagementModels from "../../servicespags/wordPressComponents/WordpressEngagementModels";
 import WordpressPricingSection from "../../servicespags/wordPressComponents/WordpressPricingSection";
+// popup from
+import { openEnquiryPopup } from "../../utils/popup";
 
 const THEME = "#ff6b1e";
 
@@ -98,17 +100,21 @@ const WordpressDetails = () => {
                             Build with WordPress
                           </h3>
                           <p className="text mb-3">
-                            WordPress development is the process of building
-                            flexible, scalable, and high-performance websites
-                            using the world’s most popular CMS. If your website
-                            feels outdated or hard to manage, you’re losing
-                            potential customers every day.
+                            WordPress gives businesses the freedom to create
+                            websites that are powerful, flexible, and easy to
+                            scale. Whether you need a business website, service
+                            platform, or content-driven site, WordPress offers
+                            the perfect balance of performance, customization,
+                            and control.
                           </p>
 
                           <p className="text mb-4">
-                            We create fast, SEO-friendly, and easy-to-manage
-                            WordPress websites that improve user experience and
-                            help you grow your business online.
+                            We develop modern WordPress websites that are
+                            visually engaging, optimized for search engines, and
+                            simple to manage. From design to functionality,
+                            every element is built to help your business create
+                            a stronger online presence and convert more visitors
+                            into customers.
                           </p>
 
                           {/* Stats Row */}
@@ -116,7 +122,7 @@ const WordpressDetails = () => {
                             <div className="react-stat-item">
                               <span className="react-stat-num">10x</span>
                               <span className="react-stat-label">
-                                Faster Load
+                                Performance
                               </span>
                             </div>
                             <div className="react-stat-divider" />
@@ -130,7 +136,7 @@ const WordpressDetails = () => {
                             <div className="react-stat-item">
                               <span className="react-stat-num">500+</span>
                               <span className="react-stat-label">
-                                Websites Built
+                                Projects Delivered
                               </span>
                             </div>
                           </div>
@@ -138,7 +144,7 @@ const WordpressDetails = () => {
                           {/* Feature Tag */}
                           <div className="react-feature-tag">
                             <i className="fas fa-bolt spin-icon"></i>
-                            <span>SEO & Performance Optimized</span>
+                            <span>SEO & Growth Focused</span>
                           </div>
                         </div>
                       </div>
@@ -391,18 +397,19 @@ const WordpressDetails = () => {
 
                   {/* S2 */}
                   <h3 style={{ marginTop: "60px" }} className="mb-2 ">
-                    What is WordPress Development?
+                    Main Heading: What is WordPress Development?
                   </h3>
                   <p className="text mb-3">
-                    WordPress development is the process of building flexible,
-                    SEO-friendly, and easy-to-manage websites using the world’s
-                    most popular content management system.
+                    WordPress development is the process of creating modern,
+                    flexible, and easy-to-manage websites using one of the
+                    world’s most trusted content management systems. It helps
+                    businesses build professional websites without depending on
+                    complex technical management for every update.
                   </p>
                   <p className="text mb-2">
-                    Let’s simplify this — instead of relying on complex coding
-                    for every update, WordPress allows you to manage content
-                    easily while maintaining performance, design, and
-                    scalability. This makes your website:
+                    With WordPress, your website becomes easier to scale,
+                    simpler to manage, and better optimized for performance,
+                    user experience, and search engine visibility.
                   </p>
                   {/* <div className="row g-2 mb-3"> */}
                   <div className="row g-4 mb-4">
@@ -492,13 +499,13 @@ const WordpressDetails = () => {
       padding-top: 18px;
       margin-top: 8px;
     }
-  `}</style>
+                        `}</style>
                   </div>
 
                   <p className="benefit-footer-text mb-4">
-                    So in simple terms — WordPress makes your website easy to
-                    manage, flexible to scale, and powerful enough to grow your
-                    business online.
+                    In simple words, WordPress helps businesses build websites
+                    that are flexible, user-friendly, and built for long-term
+                    online growth.
                   </p>
 
                   {/* SLIDER */}
@@ -555,10 +562,18 @@ const WordpressDetails = () => {
                               a Leading WordPress Development Company.
                             </h3>
 
-                            <a href="/contact" className="discuss-cta">
+                            <button
+                              type="button"
+                              className="discuss-cta"
+                              onClick={openEnquiryPopup}
+                            >
+                              Let’s Build Your Website
+                              <i className="fas fa-arrow-right"></i>
+                            </button>
+                            {/* <a href="/contact" className="discuss-cta">
                               Let’s Build Your Website{" "}
                               <i className="fas fa-arrow-right"></i>
-                            </a>
+                            </a> */}
                           </div>
                         </div>
                       </div>
@@ -572,8 +587,9 @@ const WordpressDetails = () => {
                       What You Get with Our WordPress Development Services
                     </h3>
                     <p className="text mb-4">
-                      We don’t just build websites — we create scalable,
-                      easy-to-manage, and SEO-optimized WordPress solutions.
+                      We build WordPress websites that are fast, scalable,
+                      SEO-friendly, and designed to help your business grow
+                      online.
                     </p>
 
                     <div className="deliverables-outer-card">
@@ -606,7 +622,7 @@ const WordpressDetails = () => {
                               </svg>
                             ),
                             label: "Custom WordPress Design",
-                            desc: "Tailored to your brand identity",
+                            desc: "Designed to match your brand identity",
                           },
                           {
                             icon: (
@@ -630,8 +646,8 @@ const WordpressDetails = () => {
                                 <line x1="12" y1="18" x2="12.01" y2="18" />
                               </svg>
                             ),
-                            label: "Fully Responsive Website",
-                            desc: "Optimized for all devices",
+                            label: "Mobile Responsive Website",
+                            desc: "Optimized for all screen sizes",
                           },
                           {
                             icon: (
@@ -650,8 +666,8 @@ const WordpressDetails = () => {
                                 <line x1="10" y1="14" x2="21" y2="3" />
                               </svg>
                             ),
-                            label: "Fully Responsive Website",
-                            desc: "Optimized for all devices",
+                            label: "SEO-Friendly Development",
+                            desc: "Built for better Google visibility",
                           },
                           {
                             icon: (
@@ -669,7 +685,7 @@ const WordpressDetails = () => {
                               </svg>
                             ),
                             label: "Plugins & Integrations",
-                            desc: "Extended functionality support",
+                            desc: "Extended website functionality",
                           },
                           {
                             icon: (
@@ -688,7 +704,7 @@ const WordpressDetails = () => {
                               </svg>
                             ),
                             label: "Speed Optimization",
-                            desc: "Fast loading performance",
+                            desc: "Fast-loading website performance",
                           },
                           {
                             icon: (
@@ -707,8 +723,8 @@ const WordpressDetails = () => {
                                 <polyline points="16,11 18,13 22,9" />
                               </svg>
                             ),
-                            label: "SEO-Ready Structure",
-                            desc: "Built to rank higher",
+                            label: "Easy Website Management",
+                            desc: "Simple and user-friendly backend",
                           },
                         ].map((item, i) => (
                           <div className="deliverable-white-card" key={i}>

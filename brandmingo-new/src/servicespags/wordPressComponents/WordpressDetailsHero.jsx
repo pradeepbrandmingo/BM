@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-
+import { Link } from "react-router-dom";
+import { openEnquiryPopup } from "../../utils/popup";
 const GradientText = ({ text, fontFamily }) => (
   <>
     <style>{`
@@ -121,20 +122,24 @@ const WordpressDetailsHero = () => {
           {/* BLOCK 3 — desc + buttons + badges */}
           <div className="rdh-bottom-block">
             <p className="rdh-desc">
-              Build powerful WordPress websites that are fast, secure, and easy
-              to manage. We create solutions that help your business grow and
-              deliver a smooth user experience.
+              Build fast, secure, and SEO-friendly WordPress websites designed
+              to grow your business and deliver a smooth user experience across
+              all devices.
             </p>
             <div className="rdh-btn-row">
-              <a href="#contact" className="rdh-btn-primary">
+              <button
+                type="button"
+                className="rdh-btn-primary"
+                onClick={openEnquiryPopup}
+              >
                 Start Your Project
                 <i className="fas fa-arrow-right" />
-              </a>
-              <a href="#work" className="rdh-btn-ghost">
-                <i className="fas fa-play" /> View Our Work
-              </a>
-            </div>
+              </button>
 
+              <Link to="/portfolio" className="rdh-btn-ghost">
+                <i className="fas fa-play" /> View Our Work
+              </Link>
+            </div>
             <div className="rdh-badges">
               <div className="rdh-badge">
                 <img

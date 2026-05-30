@@ -4,89 +4,89 @@ const servicesData = [
   {
     id: "custom",
     title: "Custom WordPress Development",
-    desc: "We build fully customized WordPress websites tailored to your brand, ensuring flexibility, performance, and scalability.",
+    desc: "We create fully custom WordPress websites designed specifically around your business goals, branding, and functionality requirements. Every website is built for flexibility, speed, and long-term scalability.",
     points: [
-      "Develop custom designs aligned with your business goals",
-      "Create clean and scalable website structure",
-      "Ensure fast performance and optimized code",
-      "Build websites that grow with your business",
+      "Custom website design tailored to your brand",
+      "Clean and scalable website architecture",
+      " Fast-loading and optimized performance",
+      "Flexible solutions built for future growth",
     ],
   },
   {
     id: "theme",
     title: "Theme Customization",
-    desc: "We customize WordPress themes to match your brand identity while improving design, usability, and performance.",
+    desc: "Already have a WordPress theme? We customize and optimize it to match your brand identity, improve usability, and deliver a more professional user experience.",
     points: [
-      "Customize layouts and UI based on your needs",
-      "Enhance design for better user experience",
-      "Optimize theme speed and responsiveness",
-      "Ensure compatibility across all devices",
+      "Personalized design customization",
+      "Improved layout and user experience",
+      " Responsive design adjustments",
+      "Performance and speed optimization",
     ],
   },
   {
     id: "woocommerce",
     title: "WooCommerce Development",
-    desc: "We create powerful WooCommerce stores that are secure, scalable, and optimized for conversions.",
+    desc: "We build powerful WooCommerce stores that help businesses sell products online with smooth shopping experiences, secure payments, and easy store management.",
     points: [
-      "Build complete online stores with product management",
-      "Integrate secure payment gateways",
-      "Optimize checkout flow for higher conversions",
-      "Manage inventory and orders efficiently",
+      "Custom online store development",
+      "Secure payment gateway integration",
+      "Product and inventory management",
+      "Conversion-focused eCommerce design",
     ],
   },
   {
     id: "plugin",
     title: "Plugin Development",
-    desc: "We develop and integrate custom WordPress plugins to extend your website’s functionality.",
+    desc: "Need advanced functionality for your website? We develop custom WordPress plugins that add the exact features your business needs without unnecessary complexity.",
     points: [
-      "Build custom plugins for specific business needs",
-      "Integrate third-party tools and APIs",
-      "Enhance website functionality and automation",
-      "Ensure smooth performance and compatibility",
+      " Custom feature development",
+      " Lightweight and scalable plugins",
+      "Secure and optimized coding",
+      "Seamless WordPress integration",
     ],
   },
   {
     id: "optimization",
     title: "Website Optimization",
-    desc: "We optimize your WordPress website for speed, performance, and better user experience.",
+    desc: "A slow website can hurt rankings and conversions. We optimize WordPress websites for speed, performance, and user experience to help improve engagement and search visibility.",
     points: [
-      "Improve page speed and Core Web Vitals",
-      "Optimize images, scripts, and database",
-      "Reduce load time for better engagement",
-      "Enhance overall website performance",
+      "Faster website loading speed",
+      " Image and code optimization",
+      "Improved Core Web Vitals",
+      "Better user experience and SEO performance",
     ],
   },
   {
     id: "seo",
     title: "SEO Setup",
-    desc: "We implement SEO best practices to help your WordPress website rank higher and attract organic traffic.",
+    desc: "We implement SEO best practices directly into your WordPress website structure to help improve rankings, visibility, and organic traffic growth.",
     points: [
-      "Optimize website structure and URLs",
-      "Implement on-page SEO fundamentals",
-      "Improve search engine visibility",
-      "Set up SEO tools and tracking systems",
+      "SEO-friendly website structure",
+      "Meta tags and schema setup",
+      " Speed and mobile optimization",
+      "Technical SEO implementation",
     ],
   },
   {
     id: "migration",
     title: "WordPress Migration",
-    desc: "We safely migrate your existing website to WordPress without data loss or downtime.",
+    desc: "We safely migrate your website to WordPress without data loss, downtime, or performance issues while ensuring a smooth transition.",
     points: [
-      "Migrate from any platform securely",
-      "Preserve data, SEO, and performance",
-      "Ensure smooth transition with zero downtime",
-      "Optimize website after migration",
+      "Secure website migration",
+      "Zero data loss process",
+      "URL and SEO preservation",
+      "Smooth platform transition",
     ],
   },
   {
     id: "support",
     title: "Maintenance & Support",
-    desc: "We provide ongoing support to keep your WordPress website secure, updated, and running smoothly.",
+    desc: "Our support team helps keep your WordPress website secure, updated, and running smoothly so you can focus on growing your business.",
     points: [
-      "Regular updates and security monitoring",
-      "Fix bugs and technical issues quickly",
-      "Ensure website uptime and stability",
-      "Provide continuous improvements and support",
+      "Regular updates and monitoring",
+      "Security and backup management",
+      "Bug fixing and technical support",
+      "Ongoing performance maintenance",
     ],
   },
 ];
@@ -202,29 +202,40 @@ const WordpressExpertiseDetails = () => {
             gap: 15px;
           }
 
-          .react-expertise-tab-btn {
+           .react-expertise-tab-btn {
             background-color: var(--bg-color);
             border: 1px solid var(--border-color2-rgba);
             border-radius: 12px;
-            padding: 25px 20px;
-            color: rgba(255, 255, 255, 0.5);
+            padding: 24px 22px;
+            min-height: 92px;
+            color: rgba(255, 255, 255, 0.82);
             text-align: left;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            line-height: 1.3;
+            line-height: 1.8;
             height: 100%;
           }
 
+
           .tab-btn-title {
-            font-family: var(--heading-font-family) !important;
-            font-size: var(--body-font-size) !important;
-            font-weight: 400 !important;
-            color: inherit;
-            margin: 0;
-            max-width: 85%;
+          font-family: var(--heading-font-family) !important;
+          font-size: 16px !important;
+          font-weight: 500 !important;
+          line-height: 1.35;
+          letter-spacing: -0.4px;
+
+          color: rgba(255, 255, 255, 0.92);
+
+          margin: 0;
+          flex: 1;
+          padding-right: 14px;
+
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: geometricPrecision;
           }
 
           .react-expertise-tab-btn:hover {
