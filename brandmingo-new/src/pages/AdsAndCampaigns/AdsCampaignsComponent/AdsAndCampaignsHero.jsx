@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-
+import { Link } from "react-router-dom";
+import { openEnquiryPopup } from "../../../utils/popup";
 const AdsAndCampaignsHero = () => {
   const features = [
     {
@@ -832,15 +833,21 @@ const AdsAndCampaignsHero = () => {
               </p>
 
               <div className="wd-btn-group">
-                <a href="contact-us" className="wd-btn-primary">
-                  <i className="fas fa-rocket" /> Start Your Campaign
-                </a>
-                <a href="portfolio" className="wd-btn-secondary">
+                <button
+                  className="wd-btn-primary"
+                  type="button"
+                  onClick={openEnquiryPopup}
+                >
+                  <i className="fas fa-rocket" />
+                  Start Your Campaign
+                </button>
+
+                <Link to="/portfolio" className="wd-btn-secondary">
                   <span className="wd-play-icon">
                     <i className="fas fa-eye" />
                   </span>
                   View Our Results
-                </a>
+                </Link>
               </div>
             </div>
 

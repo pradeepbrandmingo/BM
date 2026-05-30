@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { openEnquiryPopup } from "../../../utils/popup";
 
 const BrandIdentityHero = () => {
   const features = [
@@ -802,15 +804,21 @@ const BrandIdentityHero = () => {
               </p>
 
               <div className="wd-btn-group">
-                <a href="#contact" className="wd-btn-primary">
-                  <i className="fas fa-rocket" /> Start Your Brand Journey
-                </a>
-                <a href="#portfolio" className="wd-btn-secondary">
+                <button
+                  className="wd-btn-primary"
+                  type="button"
+                  onClick={openEnquiryPopup}
+                >
+                  <i className="fas fa-rocket" />
+                  Start Your Brand Journey
+                </button>
+
+                <Link to="/portfolio" className="wd-btn-secondary">
                   <span className="wd-play-icon">
                     <i className="fas fa-eye" />
                   </span>
                   View Our Work
-                </a>
+                </Link>
               </div>
             </div>
 

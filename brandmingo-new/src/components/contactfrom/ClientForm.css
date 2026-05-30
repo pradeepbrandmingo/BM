@@ -336,7 +336,7 @@
 .cf-field:last-child {
   margin-bottom: 0;
 }
-
+/*
 .cf-input {
   width: 100%;
   padding: 20px 16px 8px;
@@ -352,6 +352,24 @@
     background 0.25s ease,
     box-shadow 0.25s ease;
   box-sizing: border-box;
+} */
+
+.cf-input {
+  width: 100%;
+  padding: 20px 16px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  color: var(--headings-color, #fff);
+  font-size: 14px;
+  font-family: var(--body-font-family, inherit);
+  outline: none;
+  transition:
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
+  box-sizing: border-box;
+  caret-color: var(--theme-color1, #ff6b1e);
 }
 
 .cf-input--prefix {
@@ -375,9 +393,13 @@
   background: rgba(255, 107, 30, 0.04);
   box-shadow: 0 0 0 3px rgba(255, 107, 30, 0.1);
 }
+.cf-input:hover:not(:focus) {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+}
 
 /* Animated bottom border */
-.cf-border {
+/* .cf-border {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -392,7 +414,7 @@
 
 .cf-input:focus ~ .cf-border {
   transform: translateX(-50%) scaleX(1);
-}
+} */
 
 /* Floating label */
 .cf-label {
@@ -431,7 +453,7 @@
 }
 
 /* Prefix */
-.cf-field-prefix {
+/* .cf-field-prefix {
   position: absolute;
   left: 14px;
   top: 50%;
@@ -443,28 +465,28 @@
   z-index: 1;
   opacity: 0;
   transition: opacity 0.22s ease;
-}
+} */
 
 /* Show prefix only when label has floated up */
-.cf-field--filled .cf-field-prefix,
+/* .cf-field--filled .cf-field-prefix,
 .cf-field:focus-within .cf-field-prefix {
   opacity: 1;
-}
+} */
 
 /* Prefix input: normal padding by default, extra when prefix visible */
-.cf-input--prefix {
+/* .cf-input--prefix {
   padding-left: 16px;
   transition:
     padding-left 0.22s ease,
     border-color 0.25s ease,
     background 0.25s ease,
     box-shadow 0.25s ease;
-}
+} */
 
-.cf-field--filled .cf-input--prefix,
+/* .cf-field--filled .cf-input--prefix,
 .cf-field:focus-within .cf-input--prefix {
   padding-left: 48px;
-}
+} */
 
 /* Error state */
 .cf-field--error .cf-input {

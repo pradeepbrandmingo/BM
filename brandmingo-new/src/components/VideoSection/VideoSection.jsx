@@ -14,17 +14,6 @@ const VideoSection = () => {
         <img src={videoImg} alt="" />
 
         <div className="content">
-          {/* YOUTUBE LINK */}
-          <a
-            href="https://www.youtube.com/watch?v=Fvae8nxzVz4"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="play-now"
-          >
-            <i className="icon fa-solid fa-play"></i>
-            <span className="ripple"></span>
-          </a>
-
           <h3 className="title">
             See How We Turn Ideas Into Impactful Digital Experiences
           </h3>

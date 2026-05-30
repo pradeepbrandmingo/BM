@@ -37,6 +37,7 @@ const NewHome = ({ openPopup }) => {
       <div className="aboutUsHome">
         <AboutUsHome />
       </div>
+      
       <WhyChooseUs />
       {/* <AboutSection /> */}
 

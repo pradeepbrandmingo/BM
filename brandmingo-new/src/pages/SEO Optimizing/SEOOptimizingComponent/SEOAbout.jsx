@@ -7,17 +7,11 @@ const NAV = [
     label: "Organic Traffic",
     to: "/organic-traffic",
   },
-  // {
-  //   fa: "fa-solid fa-user-check",
-  //   label: "Genuine Inquiries",
-  // },
-  // {
-  //   fa: "fa-solid fa-mobile-screen",
-  //   label: "Mobile Search",
-  // },
+
   {
     fa: "fa-solid fa-location-dot",
     label: "Local Search Dominance",
+    to: "/local-search-dominance",
   },
 ];
 
@@ -241,15 +235,10 @@ const SEOAbout = () => {
             <h2 className="wda-h1">What is SEO Optimization?</h2>
             <p className="wda-p">
               SEO optimization is the process of improving your website’s
-              visibility on search engines to attract the right audience and
-              drive organic traffic. It involves keyword strategy, on-page
-              optimization, technical improvements, and content enhancements to
-              boost rankings and performance.
-              <br />
-              Think of it this way — SEO is not just about rankings, it’s your
-              long-term growth engine working 24/7. Without proper optimization,
-              you’re losing potential traffic, leads, and valuable
-              opportunities.
+              structure, content, speed, and authority to rank higher on search
+              engines like Google. A properly optimized website helps businesses
+              increase visibility, attract organic traffic, improve user
+              experience, and generate more leads and conversions.
             </p>
 
             <div className="wda-lbl" style={{ marginTop: "40px" }}>

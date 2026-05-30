@@ -1,26 +1,28 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { openEnquiryPopup } from "../../../utils/popup";
 
 const SEOHero = () => {
   const features = [
     {
       icon: "fas fa-chart-line",
-      title: "High-Impact SEO Strategies",
-      desc: "Optimized SEO techniques to boost rankings, traffic, and conversions.",
+      title: "Improve Search Rankings",
+      desc: "Increase your visibility on Google and rank higher for targeted keywords.",
     },
     {
       icon: "fas fa-globe",
-      title: "Multi-Channel Visibility",
-      desc: "Improve presence across search engines and multiple organic channels.",
+      title: "Drive Organic Traffic",
+      desc: "Attract high-intent visitors through strategic SEO optimization techniques.",
     },
     {
       icon: "fas fa-search",
-      title: "Data-Driven SEO",
-      desc: "Continuous tracking, keyword analysis, and performance improvements.",
+      title: "Generate Quality Leads",
+      desc: "Convert organic traffic into qualified leads and business opportunities.",
     },
     {
       icon: "fas fa-rocket",
-      title: "Scalable Organic Growth",
-      desc: "Built to grow your traffic consistently as your business expands.",
+      title: "Long-Term Business Growth",
+      desc: "Build sustainable online visibility with scalable SEO strategies.",
     },
   ];
 
@@ -791,31 +793,47 @@ const SEOHero = () => {
             {/* ── LEFT CONTENT ── */}
             <div className="wd-hero-content">
               <div className="wd-tagline">
-                <i className="fas fa-bolt" /> OPTIMIZE. RANK. GROW ORGANICALLY.
+                <i className="fas fa-bolt" /> RANK HIGHER. DRIVE ORGANIC
+                TRAFFIC.
               </div>
 
               <h3>
-                SEO Optimization
+                SEO Optimization Services
                 <br />
-                That Drives <span className="wd-title-accent">Real Growth</span>
+                That Drives{" "}
+                <span className="wd-title-accent">
+                  {" "}
+                  SEO Optimization Services
+                </span>
               </h3>
 
               <p className="wd-description">
-                We don't just improve rankings — we build data-driven SEO
-                strategies that increase visibility, attract the right audience,
-                and turn organic traffic into real business growth.
+                From technical SEO and on-page optimization to keyword targeting
+                and content improvements, our SEO services are focused on
+                delivering long-term growth, better visibility, and measurable
+                results.
+                <br />
+                We help businesses improve search engine rankings, increase
+                organic traffic, and generate high-quality leads through
+                data-driven SEO optimization strategies.
               </p>
 
               <div className="wd-btn-group">
-                <a href="#contact" className="wd-btn-primary">
-                  <i className="fas fa-rocket" /> Start Your SEO
-                </a>
-                <a href="#portfolio" className="wd-btn-secondary">
+                <button
+                  className="wd-btn-primary"
+                  type="button"
+                  onClick={openEnquiryPopup}
+                >
+                  <i className="fas fa-rocket" />
+                  Get SEO Audit
+                </button>
+
+                <Link to="/portfolio" className="wd-btn-secondary">
                   <span className="wd-play-icon">
                     <i className="fas fa-eye" />
                   </span>
-                  View Our Results
-                </a>
+                  View SEO Strategy
+                </Link>
               </div>
             </div>
 

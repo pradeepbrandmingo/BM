@@ -667,3 +667,15 @@
     font-size: 26px;
   }
 }
+/* responshive */
+@media (max-width: 560px) {
+  .au-right .btn-style-one {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .au-stats-bar {
+    margin-top: 20px;
+  }
+}

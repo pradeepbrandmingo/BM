@@ -323,7 +323,6 @@ const ClientForm = () => {
                     name="phone"
                     label="Phone Number *"
                     type="tel"
-                    prefix="+91"
                     value={fields.phone}
                     onChange={handleChange}
                     onBlur={handleBlur}

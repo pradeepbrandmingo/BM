@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 // import "./webdev-sections.css";
 
 /* ── DATA ── */
-
 const WEBSITE_TYPES = [
   {
     fa: "fa-solid fa-briefcase",

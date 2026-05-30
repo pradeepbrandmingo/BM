@@ -13,7 +13,7 @@ const WebDevelopmentNew = ({ openPopup }) => {
       {/* MAIN */}
       <section
         className="services-details pt-120 pb-120"
-        style={{ marginTop: "40px", marginBottom: "120px" }}
+        // style={{ marginTop: "-40px", marginBottom: "10px" }}
       >
         <div className="service-details-page">
           <div className="container">
@@ -22,8 +22,13 @@ const WebDevelopmentNew = ({ openPopup }) => {
                 <div className="services-details__content">
                   {/* S1 */}
                   <WebDevAbout />
-                  <WebDevServices openPopup={openPopup} />
-                  <WebDevExtra />
+                  <div className="WebDev-Services-spacing">
+                    <WebDevServices openPopup={openPopup} />
+                  </div>
+
+                  <div className="WebDev-Extra-spacing">
+                    <WebDevExtra />
+                  </div>
                 </div>
               </div>
             </div>
