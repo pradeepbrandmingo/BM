@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const PATH =
   "M 40 700 C 80 680, 120 650, 160 620 C 200 590, 240 560, 280 530 C 320 500, 340 480, 360 460 C 400 420, 440 400, 480 385 C 510 372, 530 365, 560 355 C 600 340, 640 320, 680 300 C 710 284, 730 272, 760 258 C 800 238, 840 215, 880 195 C 910 178, 940 162, 980 148 C 1020 132, 1060 108, 1100 82 C 1120 68, 1140 52, 1160 38";
@@ -8,31 +9,31 @@ const steps = [
     num: "01",
     icon: "fa-solid fa-magnifying-glass-chart",
     title: "Requirement Analysis",
-    desc: "Understanding your business, audience, and website goals before starting the project.",
+    desc: "We understand your business goals, audience, and project requirements before starting development.",
   },
   {
     num: "02",
     icon: "fa-solid fa-pen-ruler",
     title: "UI/UX Design",
-    desc: "Designing a clean, modern, and user-friendly layout aligned with your brand identity.",
+    desc: "We design clean and user-focused interfaces that align perfectly with your brand identity.",
   },
   {
     num: "03",
     icon: "fa-brands fa-wordpress",
     title: "WordPress Development",
-    desc: "Building a fast, scalable, and fully functional WordPress website using best practices.",
+    desc: "Our team develops high-performance WordPress websites with scalable and SEO-friendly architecture.",
   },
   {
     num: "04",
     icon: "fa-solid fa-shield-halved",
     title: "Testing",
-    desc: "Ensuring your website works perfectly across all devices and browsers.",
+    desc: "Every website is tested across devices and browsers to ensure smooth functionality and performance.",
   },
   {
     num: "05",
     icon: "fa-solid fa-rocket",
     title: "Launch",
-    desc: "Deploying your website smoothly and making it live without any performance issues.",
+    desc: "We deploy your website carefully and make it live with complete optimization and zero performance issues.",
   },
 ];
 
@@ -155,18 +156,18 @@ export default function WordpressProcessSection() {
             Our Process
           </div>
           <h2 className="ps-heading">
-            We have expert team
+            Expert Team
             <br />
-            and <span className="ora">proven process</span>
+            <span className="ora">proven process</span>
           </h2>
           <p className="ps-sub">
-            We follow a streamlined WordPress development process to deliver
-            fast, secure, and high-performing websites that drive real business
+            Our streamlined WordPress development process helps us create fast,
+            secure, and scalable websites designed for long-term business
             growth.
           </p>
-          <a href="#contact" className="ps-btn">
+          <Link to="/contact-us" className="ps-btn">
             Get Started <span>→</span>
-          </a>
+          </Link>
         </div>
 
         {/* ── DESKTOP DIAGRAM ── */}

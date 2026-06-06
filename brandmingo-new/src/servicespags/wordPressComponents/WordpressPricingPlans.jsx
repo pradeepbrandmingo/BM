@@ -1,46 +1,53 @@
 import { useEffect, useRef } from "react";
+import { openEnquiryPopup } from "../../utils/popup";
 
 const plans = [
   {
     name: "Starter",
-    desc: "Perfect for small businesses",
-    price: "₹15,000",
+    desc: "Perfect for startups & local businesses",
+    price: "₹18,000",
     features: [
-      "5 Pages Website",
-      "Basic SEO",
-      "Responsive Design",
-      "1 Month Support",
-      "Google Analytics Setup",
+      "Up to 5 Pages Website",
+      "Mobile Responsive Design",
+      " Basic SEO Setup",
+      "Contact Form Integration",
+      "WhatsApp Integration",
+      "Speed Optimization",
+      " 1 Month Support",
     ],
     popular: false,
     delay: "0.1s",
   },
   {
     name: "Growth",
-    desc: "Best for scaling brands",
-    price: "₹35,000",
+    desc: "Best for growing businesses",
+    price: "₹30,000",
     features: [
-      "10 Pages Website",
-      "Advanced SEO",
-      "Speed Optimization",
-      "3 Months Support",
-      "Social Media Integration",
+      "Up to 10 Pages Website",
+      "Advanced SEO Optimization",
+      "Custom UI/UX Design",
       "Lead Generation Forms",
+      "Blog Setup",
+      "Social Media Integration",
+      "Performance Optimization",
+      "3 Months Support",
     ],
     popular: true,
     delay: "0.2s",
   },
   {
     name: "Premium",
-    desc: "For serious businesses",
-    price: "₹75,000",
+    desc: "Custom project pricing",
+    price: "₹65,000",
     features: [
-      "Unlimited Pages",
-      "Full SEO + Ads Setup",
-      "Custom UI/UX Design",
-      "6 Months Support",
-      "E-commerce Ready",
+      "Custom Website Development",
+      "eCommerce Functionality",
+      "Advanced UI/UX Experience",
+      "Full SEO + Analytics Setup",
+      "CRM/API Integrations",
       "Priority Support",
+      "High-Speed Optimization",
+      "6 Months Support",
     ],
     popular: false,
     delay: "0.3s",
@@ -76,7 +83,8 @@ const WordpressPricingPlans = () => {
           {/* h2 tag — picks up style.css h2 vars automatically */}
           <h3 className="pp-title">Choose Your Plan</h3>
           <p className="pp-subtitle">
-            Transparent pricing built for businesses of every size
+            Flexible website packages designed for startups, growing businesses,
+            and premium brands.
           </p>
         </div>
 
@@ -96,7 +104,7 @@ const WordpressPricingPlans = () => {
 
               <div className="pp-price-wrap">
                 <span className="pp-price">{plan.price}</span>
-                <span className="pp-price-note">One-time project price</span>
+                <span className="pp-price-note">One-time project pricing</span>
               </div>
 
               <ul className="pp-features">
@@ -110,7 +118,14 @@ const WordpressPricingPlans = () => {
                 ))}
               </ul>
 
-              <a href="#contact" className="pp-btn">
+              <a
+                href="#"
+                className="pp-btn"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openEnquiryPopup();
+                }}
+              >
                 Get Started
               </a>
             </div>

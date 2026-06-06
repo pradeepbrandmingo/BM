@@ -206,16 +206,16 @@ const WordpressExpertiseDetails = () => {
             background-color: var(--bg-color);
             border: 1px solid var(--border-color2-rgba);
             border-radius: 12px;
-            padding: 24px 22px;
-            min-height: 92px;
-            color: rgba(255, 255, 255, 0.82);
+            padding: 18px 20px;
+             min-height: 72px;
+           color: var(--body-text-color);
+           line-height: var(--body-line-height-default);
             text-align: left;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            line-height: 1.8;
             height: 100%;
           }
 
@@ -223,11 +223,11 @@ const WordpressExpertiseDetails = () => {
           .tab-btn-title {
           font-family: var(--heading-font-family) !important;
           font-size: 16px !important;
-          font-weight: 500 !important;
-          line-height: 1.35;
-          letter-spacing: -0.4px;
+          font-weight: var(--body-font-weight-medium) !important;
+           line-height: 1.45;
+          letter-spacing: var(--body-letter-spacing);
 
-          color: rgba(255, 255, 255, 0.92);
+          color: var(--heading-text-color);
 
           margin: 0;
           flex: 1;
@@ -279,22 +279,26 @@ const WordpressExpertiseDetails = () => {
           }
 
           .react-expertise-content-title {
-            font-family: var(--heading-font-family);
+
             font-size: var(--h3-font-size);
-            color: var(--headings-color);
             margin-bottom: 20px;
-            font-weight: 600;
+            font-weight: var(--h3-font-weight);
+            line-height: 1.02;
+            letter-spacing: var(--heading-letter-spacing);
+            color: var(--heading-text-color);
             border-left: 4px solid var(--theme-color1);
             padding-left: 20px;
           }
 
           .react-expertise-content-desc {
-            color: var(--text-color);
-            opacity: 0.7;
+            color: var(--body-text-color);
+            opacity: 1;
             font-size: var(--body-font-size);
-            line-height: var(--body-line-height);
+            line-height: var(--body-line-height-large);
+            font-weight: var(--body-font-weight-regular);
+            letter-spacing: var(--body-letter-spacing);
             margin-bottom: 30px;
-            font-family: var(--body-font-family);
+
           }
 
           .react-expertise-content-list {
@@ -307,12 +311,15 @@ const WordpressExpertiseDetails = () => {
 
           .react-expertise-content-list li {
             font-size: 15px;
-            color: var(--text-color);
-            opacity: 0.9;
+            color: var(--body-text-color);
+            opacity: 1;
             display: flex;
             align-items: start;
             gap: 12px;
-            font-family: var(--body-font-family);
+
+            line-height: var(--body-line-height-default);
+            font-weight: var(--body-font-weight-regular);
+            letter-spacing: var(--body-letter-spacing);
           }
 
           .react-expertise-content-list li::before {
@@ -362,10 +369,12 @@ const WordpressExpertiseDetails = () => {
             }
 
             .re-acc-title {
-              font-family: var(--heading-font-family);
+
               font-size: 15px;
-              font-weight: 600;
-              color: #fff;
+               color: var(--heading-text-color);
+              font-weight: var(--body-font-weight-semibold);
+              line-height: var(--body-line-height-default);
+              letter-spacing: var(--body-letter-spacing);
               line-height: 1.4;
             }
 
@@ -382,11 +391,12 @@ const WordpressExpertiseDetails = () => {
             }
 
             .re-acc-desc {
-              font-family: var(--body-font-family);
+
               font-size: 14px;
-              color: var(--text-color);
-              opacity: 0.75;
-              line-height: var(--body-line-height);
+              color: var(--body-text-color);
+              opacity: 1;
+              line-height: var(--body-line-height-large);
+              letter-spacing: var(--body-letter-spacing);
               margin-bottom: 16px;
             }
 
@@ -400,9 +410,11 @@ const WordpressExpertiseDetails = () => {
             }
 
             .re-acc-list li {
-              font-family: var(--body-font-family);
+
               font-size: 14px;
-              color: var(--text-color);
+              color: var(--body-text-color);
+              line-height: var(--body-line-height-default);
+              letter-spacing: var(--body-letter-spacing);
               display: flex;
               align-items: flex-start;
               gap: 10px;

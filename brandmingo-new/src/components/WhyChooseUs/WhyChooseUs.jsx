@@ -19,17 +19,17 @@ const FEATURES = [
   {
     icon: <FiShield size={30} />,
     title: "Certified Experts",
-    desc: "Our team consists of certified professionals with deep industry knowledge and hands-on experience.",
+    desc: "Our team includes experienced designers, developers, marketers, and strategists who understand how to build digital experiences that drive real business impact.",
   },
   {
     icon: <FiTrendingUp size={30} />,
     title: "Proven Results",
-    desc: "We deliver measurable results that help businesses grow, scale and stay ahead of the competition.",
+    desc: "We focus on growth-oriented solutions that improve website performance, generate quality leads, increase engagement, and support long-term scalability.",
   },
   {
     icon: <FiAward size={30} />,
     title: "Award Winning",
-    desc: "Recognized by industry leaders for our creativity, innovation and impactful digital solutions.",
+    desc: "From branding and UI/UX to development and digital campaigns, our creative-first process helps businesses stand out in competitive markets.",
   },
   {
     icon: <FiBarChart2 size={30} />,
@@ -88,15 +88,17 @@ export default function WhyChooseUs() {
 
               {/* Heading */}
               <h2 className="wcu-heading">
-                Why Our Clients
+                Why Choose
                 <br />
-                Choose <span className="wcu-heading-brand">Brandmingo</span>
+                <span className="wcu-heading-brand">BRANDMINGO??</span>
               </h2>
 
               {/* Para */}
               <p className="wcu-para">
-                We combine strategy, creativity, and technology to deliver
-                digital solutions that drive real results for your business.
+                At Brandmingo, we combine strategy, creativity, technology, and
+                performance marketing to deliver digital solutions that help
+                businesses grow faster, build stronger online visibility, and
+                achieve measurable results.
               </p>
 
               {/* Image collage */}

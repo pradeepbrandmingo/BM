@@ -154,7 +154,7 @@ const WordpressDetails = () => {
                         <div className="react-build-image-wrapper">
                           <div className="image-glass-card">
                             <img
-                              src="https://res.cloudinary.com/dpdn7kzll/image/upload/v1777530322/Untitled_design_1_so2ju6.png"
+                              src="https://res.cloudinary.com/dqqgpii8v/image/upload/v1780338730/wordpress_website_developement_banner_Brandmingo_qtrv5c.png"
                               alt="React Development"
                               className="main-react-img"
                             />
@@ -218,18 +218,19 @@ const WordpressDetails = () => {
     }
 
     .react-stat-num {
-      font-family: var(--heading-font-family);
-      font-size: 26px;
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1;
+
+       font-size: var(--h4-font-size);
+       font-size: var(--h4-font-size);
+       color: var(--heading-text-color);
+       line-height: var(--heading-line-height);
     }
 
     .react-stat-label {
-      font-family: var(--body-font-family);
+
       font-size: 12px;
-      color: rgba(255,255,255,0.75);
-      letter-spacing: 0.3px;
+      color: var(--body-text-color);
+      letter-spacing: var(--body-letter-spacing);
+      line-height: var(--body-line-height-default);
     }
 
     .react-stat-divider {
@@ -248,10 +249,12 @@ const WordpressDetails = () => {
       border: 1px solid rgba(var(--theme-color1-rgb), 0.2);
       padding: 8px 16px;
       border-radius: 50px;
-      font-family: var(--heading-font-family);
+
       font-size: 13px;
-      font-weight: 600;
-      color: var(--theme-color1);
+      font-weight: var(--body-font-weight-semibold);
+       color: var(--theme-color1);
+      letter-spacing: var(--body-letter-spacing);
+      line-height: var(--body-line-height-default);
     }
 
     .spin-icon {
@@ -320,14 +323,15 @@ const WordpressDetails = () => {
     .floating-badge {
       position: absolute;
       background: var(--theme-color1);
-      color: #fff;
+      color: var(--heading-text-color);
       padding: 6px 18px;
       border-radius: 50px;
-      font-family: var(--heading-font-family);
-      font-weight: 700;
+
+      font-weight: var(--h4-font-weight);
       font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: var(--body-letter-spacing);
+      line-height: var(--heading-line-height);
       box-shadow: 0 10px 20px rgba(var(--theme-color1-rgb), 0.3);
       z-index: 3;
       display: flex;
@@ -397,7 +401,7 @@ const WordpressDetails = () => {
 
                   {/* S2 */}
                   <h3 style={{ marginTop: "60px" }} className="mb-2 ">
-                    Main Heading: What is WordPress Development?
+                    What is WordPress Development?
                   </h3>
                   <p className="text mb-3">
                     WordPress development is the process of creating modern,
@@ -436,12 +440,12 @@ const WordpressDetails = () => {
                     ))}
 
                     <style>{`
-    .benefit-card {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 20px;
-      background: var(--theme-color-white); /* #ffffff */
+                    .benefit-card {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    padding: 16px 20px;
+                background: var(--theme-color-white); /* #ffffff */
       border-radius: 14px;
       /* Border matches your style.css border settings but for light bg */
       border: 1.5px solid rgba(0, 0, 0, 0.05);
@@ -479,22 +483,34 @@ const WordpressDetails = () => {
       color: #ffffff; /* Always white on orange bg */
     }
 
+    // .benefit-label {
+
+    //    font-size: var(--body-font-size);
+    //    font-size: var(--body-font-size);
+    //    color: var(--heading-text-light);
+    //    letter-spacing: var(--body-letter-spacing);
+    //    line-height: var(--body-line-height-default);
+    // }
+
     .benefit-label {
-      font-family: var(--heading-font-family); /* Beatrice Trial */
-      font-size: 16px; /* body-font-size */
-      font-weight: 600;
-      color: #151515; /* Using your --bg-color as text color for white bg */
-      letter-spacing: -0.2px;
-    }
+  font-size: var(--body-font-size);
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  color: var(--heading-light);
+  line-height: var(--line-height-default);
+  letter-spacing: var(--letter-spacing-default);
+}
 
     /* Footer Text Styling */
     .benefit-footer-text {
-      font-family: var(--body-font-family);
+
       font-size: var(--body-font-size);
       line-height: var(--body-line-height);
       font-style: italic;
-      opacity: 0.85;
-      color: var(--text-color); /* Kept as white for dark outer section */
+      opacity: 1;
+      color: var(--body-text-color);
+      line-height: var(--body-line-height-large);
+      letter-spacing: var(--body-letter-spacing);
       border-top: 1px solid var(--border-color2-rgba);
       padding-top: 18px;
       margin-top: 8px;

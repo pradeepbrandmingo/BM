@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const WordpressCtaBanner = () => {
   return (
@@ -90,7 +91,7 @@ const WordpressCtaBanner = () => {
           font-weight: 700;
           letter-spacing: 2.5px;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.75);
+           color: #ffffff;
           margin-bottom: 20px;
         }
 
@@ -118,7 +119,8 @@ const WordpressCtaBanner = () => {
         .cta-subtext {
           font-family: var(--body-font-family);
           font-size: var(--body-font-size);
-          color: rgba(255,255,255,0.75);
+            color: rgba(255,255,255,0.96);
+
           line-height: var(--body-line-height);
           margin-bottom: 38px;
           max-width: 520px;
@@ -170,7 +172,7 @@ const WordpressCtaBanner = () => {
           font-family: var(--heading-font-family);
           font-size: 14px;
           font-weight: 600;
-          color: rgba(255,255,255,0.85);
+          color: #ffffff;
           text-decoration: none;
           display: inline-flex;
           align-items: center;
@@ -243,7 +245,7 @@ const WordpressCtaBanner = () => {
         .badge-info .lbl {
           font-family: var(--body-font-family);
           font-size: 11.5px;
-          color: rgba(255,255,255,0.65);
+           color: rgba(255,255,255,0.95);
           text-transform: uppercase;
           letter-spacing: 1px;
           margin-top: 4px;
@@ -295,7 +297,7 @@ const WordpressCtaBanner = () => {
           <div className="cta-inner">
             {/* ── Left ── */}
             <div className="cta-left">
-              <span className="cta-eyebrow">Free Consultation Available</span>
+              <span className="cta-eyebrow">FREE CONSULTATION AVAILABLE</span>
 
               <h3 className="cta-heading">
                 Ready to Build a High-Performing
@@ -305,18 +307,26 @@ const WordpressCtaBanner = () => {
 
               <p className="cta-subtext">
                 We create fast, scalable, and SEO-optimized WordPress websites
-                that help you attract more visitors, generate leads, and grow
-                your business online.
+                designed to attract customers, generate quality leads, and help
+                your business grow online.
               </p>
 
               <div className="cta-btn-wrap">
-                <a href="#contact" className="cta-main-btn">
+                {/* <a href="#contact" className="cta-main-btn">
                   Start Your Project
                   <i className="fas fa-arrow-right" />
-                </a>
-                <a href="#portfolio" className="cta-link">
+                </a> */}
+
+                <Link to="/contact-us" className="cta-main-btn">
+                  Start Your Project  <i className="fas fa-arrow-right" />
+                </Link>
+                {/* <a href="#portfolio" className="cta-link">
                   View Our Work <i className="fas fa-arrow-right" />
-                </a>
+                </a> */}
+
+                <Link to="/portfolio" className="cta-link">
+                  Start Your Project  <i className="fas fa-arrow-right" />
+                </Link>
               </div>
             </div>
 
@@ -328,7 +338,7 @@ const WordpressCtaBanner = () => {
                 </div>
                 <div className="badge-info">
                   <span className="val">500+</span>
-                  <span className="lbl">WEBSITES DELIVERED</span>
+                  <span className="lbl">Websites Delivered</span>
                 </div>
               </div>
 
@@ -338,7 +348,7 @@ const WordpressCtaBanner = () => {
                 </div>
                 <div className="badge-info">
                   <span className="val">98%</span>
-                  <span className="lbl">CLIENT SATISFACTION</span>
+                  <span className="lbl">Client Satisfaction</span>
                 </div>
               </div>
 
@@ -348,7 +358,7 @@ const WordpressCtaBanner = () => {
                 </div>
                 <div className="badge-info">
                   <span className="val">24×7</span>
-                  <span className="lbl">SUPPORT AVAILABLE</span>
+                  <span className="lbl">Support Available</span>
                 </div>
               </div>
             </div>

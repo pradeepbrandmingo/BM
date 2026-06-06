@@ -231,7 +231,7 @@
 }
 
 .au-ring-text {
-  fill: rgba(255, 255, 255, 0.55);
+  fill: #f1f0ee;
   font-size: 19px;
   font-family: var(--au-font-body);
   letter-spacing: 2.5px;
@@ -291,13 +291,13 @@
 
 .au-intro-tagline {
   font-size: 16px;
-  color: var(--au-gray-light);
+  color: var(--text-offwhite);
   line-height: 1.7;
   margin: 0;
 }
 
 .au-intro-tagline strong {
-  color: var(--au-white);
+  color: var(--text-offwhite);
   font-weight: 600;
   font-size: 17px;
 }
@@ -308,7 +308,7 @@
 
 .au-body-text {
   font-size: 15px;
-  color: var(--au-gray);
+  color: var(--text-offwhite);
   line-height: 1.85;
   max-width: 520px;
 }
@@ -450,7 +450,7 @@
 
 .au-stat-label {
   font-size: 13px;
-  color: #888888;
+  color: #444444;
   font-weight: 500;
   letter-spacing: 0.2px;
   white-space: nowrap;

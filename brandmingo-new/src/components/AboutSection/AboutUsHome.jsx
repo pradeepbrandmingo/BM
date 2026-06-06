@@ -28,9 +28,9 @@ const STATS = [
     number: "3K+",
     label: "Successful Projects",
   },
-  { icon: <FiUsers size={24} />, number: "200+", label: "Expert Team" },
-  { icon: <FiUsers size={24} />, number: "350+", label: "Happy Customers" },
-  { icon: <FiClock size={24} />, number: "16+", label: "Years of Experience" },
+  { icon: <FiUsers size={24} />, number: "15+", label: "Expert Team" },
+  { icon: <FiUsers size={24} />, number: "150+", label: "Happy Customers" },
+  { icon: <FiClock size={24} />, number: "3+", label: "Years of Experience" },
 ];
 
 /* ─── Progress Bar ────────────────────────────────────────── */
@@ -189,7 +189,7 @@ export default function AboutUsHome() {
                     </defs>
                     <text className="au-ring-text">
                       <textPath href="#circle-text-au" startOffset="0%">
-                        DRIVEN BY STRATEGY • FOCUSED ON RESULTS •
+                        BUILT FOR GROWTH • DESIGNED FOR SUCCESS •
                       </textPath>
                     </text>
                   </svg>
@@ -223,17 +223,19 @@ export default function AboutUsHome() {
                 <FiSend className="au-intro-icon" />
               </span>
               <p className="au-intro-tagline">
-                We don't just build websites or run campaigns.{" "}
+                We don’t just build websites or run campaigns.{" "}
                 <strong>
-                  We build digital solutions that{" "}
-                  <span className="au-orange">drive real growth.</span>
+                  We create digital growth systems that attract customers{" "}
+                  <span className="au-orange">
+                    and drive measurable business results.
+                  </span>
                 </strong>
               </p>
             </div>
             <p className="au-body-text">
-              At Brandmingo, we combine creativity, technology, and data to help
-              brands stand out, connect with the right audience, and achieve
-              measurable success in the digital world.
+              Brandmingo is where creativity meets strategy. We partner with
+              businesses to build impactful digital experiences, meaningful
+              brand identities and lasting connections with audiences.
             </p>
             {/* Skills */}
             <div className="au-skills">
@@ -247,7 +249,7 @@ export default function AboutUsHome() {
               <span className="btn-arrow-left">
                 <img src={arrow} alt="" />
               </span>
-              <span className="btn-title">More About Us</span>
+              <span className="btn-title">Explore Our Approach.</span>
               <span className="btn-arrow-right">
                 <img src={arrow} alt="" />
               </span>

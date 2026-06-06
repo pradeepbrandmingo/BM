@@ -8,8 +8,11 @@ const WordpressWhyChooseBm = () => {
         <div className="wcb-header">
           <h3>Why Choose Brandmingo for WordPress Development</h3>
           <p className="wcb-subtitle">
-            We build high-performance WordPress websites that are fast,
-            scalable, and designed to drive real business growth.
+            At Brandmingo, we focus on building high-performance WordPress
+            websites that are fast, scalable, SEO-optimized, and designed to
+            generate real business results. From startups to growing brands, we
+            help businesses create strong digital experiences that improve
+            visibility, engagement, and conversions.
           </p>
         </div>
 
@@ -22,8 +25,8 @@ const WordpressWhyChooseBm = () => {
             </div>
             <div className="wcb-stat-label">Years of WordPress Expertise</div>
             <p className="wcb-stat-desc">
-              Delivering high-performance WordPress websites that drive real
-              business growth.
+              Years of hands-on experience building modern WordPress websites
+              for businesses across multiple industries.
             </p>
           </div>
 
@@ -34,8 +37,8 @@ const WordpressWhyChooseBm = () => {
             </div>
             <div className="wcb-feat-title">Expert WordPress Developers</div>
             <p className="wcb-feat-desc">
-              Skilled team focused on performance, usability, and scalable
-              website solutions.
+              Skilled developers focused on performance, clean development
+              practices, and scalable website solutions.
             </p>
           </div>
 
@@ -46,8 +49,8 @@ const WordpressWhyChooseBm = () => {
             </div>
             <div className="wcb-stat-label">Websites Delivered</div>
             <p className="wcb-stat-desc">
-              Successfully built websites for startups, businesses, and growing
-              brands.
+              Successfully delivered business websites, eCommerce stores, and
+              custom WordPress solutions.
             </p>
           </div>
 
@@ -58,8 +61,8 @@ const WordpressWhyChooseBm = () => {
             </div>
             <div className="wcb-stat-label">Client Satisfaction</div>
             <p className="wcb-stat-desc">
-              Consistently delivering projects that exceed expectations and
-              performance goals.
+              Trusted by businesses for delivering websites that meet growth,
+              performance, and branding goals.
             </p>
           </div>
 
@@ -70,8 +73,8 @@ const WordpressWhyChooseBm = () => {
             </div>
             <div className="wcb-feat-title">Fast & Agile Delivery</div>
             <p className="wcb-feat-desc">
-              Efficient workflows and quick iterations ensure faster project
-              completion.
+              Efficient workflows and streamlined processes help us deliver
+              projects faster without compromising quality.
             </p>
           </div>
 
@@ -82,8 +85,8 @@ const WordpressWhyChooseBm = () => {
             </div>
             <div className="wcb-feat-title">24×7 Support</div>
             <p className="wcb-feat-desc">
-              Reliable support to keep your website secure, updated, and running
-              smoothly.
+              Card 06 Description: Reliable technical support to keep your
+              website secure, updated, and running smoothly.
             </p>
           </div>
 
@@ -94,8 +97,8 @@ const WordpressWhyChooseBm = () => {
             </div>
             <div className="wcb-stat-label">In-House Team</div>
             <p className="wcb-stat-desc">
-              No outsourcing — every project handled by our dedicated in-house
-              experts.
+              No outsourcing involved. Every project is handled by our dedicated
+              in-house development team.
             </p>
           </div>
 
@@ -106,8 +109,8 @@ const WordpressWhyChooseBm = () => {
             </div>
             <div className="wcb-feat-title">Quality Assurance</div>
             <p className="wcb-feat-desc">
-              Every website is tested for speed, security, and seamless user
-              experience.
+              Every website goes through detailed testing for speed,
+              responsiveness, functionality, and security.
             </p>
           </div>
 

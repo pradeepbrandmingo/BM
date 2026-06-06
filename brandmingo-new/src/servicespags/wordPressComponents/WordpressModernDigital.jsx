@@ -2,62 +2,62 @@ import React, { useState } from "react";
 
 const serviceImages = {
   custom:
-    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=520&q=80&auto=format&fit=crop",
+    "https://res.cloudinary.com/dqqgpii8v/image/upload/v1780319468/wordpress_website_developement_banner_Brandmingo2_csiqxh.png",
   theme:
-    "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=520&q=80&auto=format&fit=crop",
+    "https://res.cloudinary.com/dqqgpii8v/image/upload/v1780319468/wordpress_website_developement_banner_Brandmingo2_csiqxh.png",
   woocommerce:
-    "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=520&q=80&auto=format&fit=crop",
+    "https://res.cloudinary.com/dqqgpii8v/image/upload/v1780319468/wordpress_website_developement_banner_Brandmingo2_csiqxh.png",
   plugin:
-    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=520&q=80&auto=format&fit=crop",
+    "https://res.cloudinary.com/dqqgpii8v/image/upload/v1780319468/wordpress_website_developement_banner_Brandmingo2_csiqxh.png",
   optimization:
-    "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=520&q=80&auto=format&fit=crop",
-  seo: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=520&q=80&auto=format&fit=crop",
+    "https://res.cloudinary.com/dqqgpii8v/image/upload/v1780319468/wordpress_website_developement_banner_Brandmingo2_csiqxh.png",
+  seo: "https://res.cloudinary.com/dqqgpii8v/image/upload/v1780319468/wordpress_website_developement_banner_Brandmingo2_csiqxh.png",
   migration:
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?w=520&q=80&auto=format&fit=crop",
+    "https://res.cloudinary.com/dqqgpii8v/image/upload/v1780319468/wordpress_website_developement_banner_Brandmingo2_csiqxh.png",
   support:
-    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=520&q=80&auto=format&fit=crop",
+    "https://res.cloudinary.com/dqqgpii8v/image/upload/v1780319468/wordpress_website_developement_banner_Brandmingo2_csiqxh.png",
 };
 
 const servicesData = [
   {
     id: "custom",
     title: "Custom WordPress Development",
-    desc: "We build fast, scalable, and fully customized WordPress websites tailored to your business needs and brand identity.",
+    desc: "We create fully customized WordPress websites built around your business goals, branding, and functionality requirements. Every website is designed for flexibility, speed, and long-term growth.",
   },
   {
     id: "theme",
     title: "Theme Customization",
-    desc: "Customize WordPress themes to match your design, improve usability, and deliver a seamless user experience.",
+    desc: "We customize WordPress themes to match your brand identity, improve design consistency, and deliver a better user experience across all devices.",
   },
   {
     id: "woocommerce",
     title: "WooCommerce Development",
-    desc: "Create powerful online stores with secure payments, smooth checkout, and optimized shopping experience.",
+    desc: "Build powerful WooCommerce stores with secure payment systems, smooth shopping experiences, and easy product management designed to increase online sales.",
   },
   {
     id: "plugin",
     title: "Plugin Development",
-    desc: "Develop and integrate custom plugins to extend your website’s functionality and automate processes.",
+    desc: "We develop custom WordPress plugins that add advanced functionality and business-specific features without affecting website performance.",
   },
   {
     id: "optimization",
     title: "Website Optimization",
-    desc: "Improve website speed, performance, and Core Web Vitals for better user experience and engagement.",
+    desc: "Improve your website’s speed, performance, and user experience with advanced optimization techniques focused on faster loading and better engagement.",
   },
   {
     id: "seo",
     title: "SEO Setup",
-    desc: "Optimize your WordPress website structure to improve rankings, visibility, and organic traffic.",
+    desc: "Our SEO setup helps your WordPress website achieve better search visibility with optimized structure, metadata, mobile responsiveness, and technical SEO practices.",
   },
   {
     id: "migration",
     title: "WordPress Migration",
-    desc: "Migrate your website safely to WordPress without data loss, downtime, or performance issues.",
+    desc: "We safely migrate websites to WordPress while protecting your data, preserving SEO performance, and ensuring a smooth transition without downtime.",
   },
   {
     id: "support",
     title: "Maintenance & Support",
-    desc: "Keep your website secure, updated, and running smoothly with ongoing support and improvements.",
+    desc: "Keep your website secure, updated, and running smoothly with ongoing WordPress maintenance, monitoring, and technical support services.",
   },
 ];
 
